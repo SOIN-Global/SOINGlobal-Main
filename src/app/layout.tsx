@@ -7,6 +7,9 @@ import { ThemeProvider } from "next-themes";
 export const metadata: Metadata = {
   title: "SOIN GLOBAL",
   description: "SOIN GLOBAL",
+  icons: {
+    icon: "/src/app/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body  className="bg-white dark:bg-[#00091a]">
+      <body className="bg-white dark:bg-[#00091a]">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />
           {children}
