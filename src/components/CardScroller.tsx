@@ -10,39 +10,31 @@ import userImg6 from "@/assets/review/user-6.png";
 
 const reviews = [
     {
-        name: "Jack",
-        username: "@jack",
         body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
         img: userImg1,
     },
     {
-        name: "Jill",
-        username: "@jill",
-        body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
+        body: "Got Scammed multiple times this week by fake ‘callers’ with fake call group’. Please tag some actual reliable callers and kol’s that I can count on with my projects.",
         img: userImg2,
     },
     {
-        name: "John",
-        username: "@john",
-        body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
+        body: "Yesterday, I got f**ked by a KOL when I thought he was going to help me grow the community for a new NFT collection",
         img: userImg3,
     },
     {
-        name: "Jane",
-        username: "@jane",
-        body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
+        body: "Got Scammed by KOL’ s again, down bad but not giving up! Need SOL to keep clicking!",
         img: userImg4,
     },
     {
-        name: "Jenny",
-        username: "@jenny",
-        body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
+        body: "So many fake “KOL” larp accounts on X scamming people Honestly sad to see so many newcomers losing their hard-earned money",
         img: userImg5,
     },
     {
-        name: "James",
-        username: "@james",
-        body: "We have identified a scammer: #Scammer spotted. We paid him, but he doesn’t respond anymore. #scam",
+        body: "Bro, just got scammed by a guy who claimed to be a KOL. I am getting sick and tired of this space with so many scammers",
+        img: userImg6,
+    },
+    {
+        body: "There are plenty of fake KOL’s who’d gladly help you with your-people who care more about their pockets han their community. Gp knock on their door, not mine",
         img: userImg6,
     },
 ];
@@ -69,7 +61,7 @@ const ReviewCard = ({
         <figure
             className={cn(
                 // Card background and border
-                "relative flex h-full w-80 cursor-pointer overflow-hidden rounded-sm dark:border border-[#262B35] bg-[#EFF3EF] dark:bg-[#262B35] p-6 dark:shadow-lg",
+                "relative flex h-full w-96 cursor-pointer overflow-hidden rounded-sm dark:border border-[#262B35] bg-[#EFF3EF] dark:bg-[#262B35] p-6 dark:shadow-lg",
                 // Text color
                 "text-black/70 dark:text-white",
                 // Hover effect
@@ -78,7 +70,7 @@ const ReviewCard = ({
         >
             <div className="flex gap-4 items-center">
                 <Image className="rounded-full border-2 border-[#5DB9F6]" width={40} height={40} alt="" src={img} />
-                <blockquote className="mt-2 text-sm leading-relaxed">{formattedBody}</blockquote>
+                <blockquote className="mt-2 text-sm text-left">{formattedBody}</blockquote>
             </div>
         </figure>
     );
@@ -87,16 +79,16 @@ const ReviewCard = ({
 export function CardScroller() {
     return (
         <div className="py-10 text-center max-w-screen-2xl m-auto">
-             <h2 className="text-black dark:text-[#C6EFEF] text-4xl font-bold mb-10">Together, We Build a Scam-Free Future! <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+            <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-10">Together, We Build a Scam-Free Future! <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
                 <Marquee pauseOnHover className="[--duration:40s]">
-                    {firstRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
+                    {firstRow.map((review, idx) => (
+                        <ReviewCard key={idx} {...review} />
                     ))}
                 </Marquee>
                 <Marquee reverse pauseOnHover className="[--duration:40s]">
-                    {secondRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
+                    {secondRow.map((review, idx) => (
+                        <ReviewCard key={idx} {...review} />
                     ))}
                 </Marquee>
                 {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>

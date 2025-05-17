@@ -27,7 +27,7 @@ const AiPowered = () => {
         <>
             {/* ai powered social intelligence start  */}
             <div className="text-center py-10 max-w-screen-xl m-auto px-4">
-                <h2 className="text-black dark:text-[#C6EFEF] text-4xl font-bold mb-10">AI-Powered Social Intelligence  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+                <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-10">AI-Powered Social Intelligence  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
                 <div className="flex flex-wrap justify-center gap-4 md:text-lg">
                     <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Smarter Influencer Marketing</span>
                     <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Maximized Engagement</span>

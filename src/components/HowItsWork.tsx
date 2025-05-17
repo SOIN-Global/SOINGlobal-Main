@@ -7,7 +7,7 @@ const HowItsWork = () => {
         <>
             {/* how it works  */}
             <div className="pt-10 max-w-screen-xl m-auto px-4">
-                <h2 className="text-center text-black dark:text-[#C6EFEF] text-4xl font-bold mb-12">How It Works <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+                <h2 className="text-center font-jakarta text-black dark:text-[#C6EFEF] text-4xl font-bold mb-12">How It Works <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
 
 
                 <div className="flex w-full">

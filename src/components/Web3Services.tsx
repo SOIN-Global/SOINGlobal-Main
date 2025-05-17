@@ -9,7 +9,7 @@ import serviceImage4 from "@/assets/services/ai_pwr4.webp";
 const Web3Services = () => {
     return (
         <div className="text-center py-10 max-w-screen-xl m-auto px-4">
-            <h2 className="text-black dark:text-[#C6EFEF] text-4xl font-bold mb-6">Innovating the Future of Web3 Services <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+            <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-6">Innovating the Future of Web3 Services <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
             {/* cards  */}
             <div className="flex justify-center items-center flex-wrap gap-4 mt-6 md:m-0">
                 <div className="w-[46%] md:w-[22%] md:mt-[200px]">

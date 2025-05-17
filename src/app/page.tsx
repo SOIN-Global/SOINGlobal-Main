@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Quality Service */}
       <div className="md:mt-[40px] py-10 max-w-screen-xl m-auto">
-        <h2 className="text-black dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Quality services made simple, fast, and accessible  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+        <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Quality services made simple, fast, and accessible  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
         <QualityService />
       </div>
 
@@ -51,13 +51,13 @@ export default function Home() {
 
       {/* Swiper  */}
       <div id="Roadmap" className="py-10">
-        <h2 className="text-black dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Roadmap  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+        <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Roadmap  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
         <RoadmapSwiper />
       </div>
 
       {/* Powered by  */}
       <div className="py-10 max-w-screen-xl m-auto">
-        <h2 className="text-black dark:text-[#C6EFEF] text-4xl font-bold text-center mb-10">Powered by  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
+        <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold text-center mb-10">Powered by  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
         <div className="flex justify-evenly items-center gap-6">
           <Image src={poweredByImage1} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover" />
           <Image src={poweredByImage2} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover drop-shadow-xl" />

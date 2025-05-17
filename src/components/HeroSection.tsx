@@ -25,7 +25,7 @@ const HeroSection = () => {
                 </h1>
 
                 <p className="text-xl md:text-3xl text-black dark:text-white/80 capitalize px-4 md:p-0">a safe Platform to trade your services on-chain with advanced AI and Data Intelligence</p>
-                <button onClick={() => setShowModal(true)} className="px-4 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)] text-xl">
+                <button onClick={() => setShowModal(true)} className="px-4 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)] text-xl z-10">
                     Get Early Access
                 </button>
                 <TypewriterInput />
