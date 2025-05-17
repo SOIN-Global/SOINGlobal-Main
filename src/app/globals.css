@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ---break---  */
+/* @custom-variant dark (&:is(.dark *)); */
+/* ---break---  */
+
+body {
+  /* background: #00091a !important; */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+
+/* --------------Navbar style---------------*/
+/* .nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+} */
+
+/* .nav-links a:hover {
+  background: linear-gradient(90deg, #8ff4f4, #8ff4f4, #fff8bb, #daccef, #daccef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+} */
+
+/* .nav_active {
+  background: linear-gradient(90deg, #8ff4f4, #8ff4f4, #fff8bb, #daccef, #daccef) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+} */
+/* 
+.nav_btn1 {
+  background: linear-gradient(131deg, #98faff, #9bf5fb, #6fe7db);
+  color: black;
+  font-weight: 300;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(127, 255, 212, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav_btn1:hover {
+  box-shadow: 0 0 8px rgba(127, 255, 212, 1);
+  text-decoration: none !important;
+} */
+
+
+
+/* ------------------ header/ Hero style------------------  */
+/* .bannersec h1 {
+  background: linear-gradient(90deg, #7fffd4, #fdfd96, #d8bfd8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: gradientAnimation 3s infinite linear;
+  background: linear-gradient(90deg, #66ffcc, #ffff66, #ffccff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s infinite linear;
+} */
+
+/* @keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+
+/* .banner_btn {
+  background: linear-gradient(131deg, #98faff, #9bf5fb, #6fe7db, #6fe7db, #6fe7db);
+  box-shadow: 0 0 10px rgba(127, 255, 212, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.banner_btn:hover {
+  box-shadow: 0 0 20px rgba(127, 255, 212, 1);
+  transform: scale(1.05);
+  text-decoration: none !important;
+} */
+
+
+
+/* ----------------marquee style/ Auto Card Scroller------------------- */
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+
+/* ------------------RoadmapSwiper/ CardSwiper-------------------   */
+.roadmap-swiper-bg {
+  /* padding: 60px 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roadmap-swiper {
+  width: 100%;
+  max-width: 1100px;
+  padding-bottom: 60px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.3s, opacity 0.3s;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.roadmap-card {
+  /* background: rgba(18, 28, 48, 0.95); */
+  border-radius: 20px;
+  padding: 36px 32px 32px 32px;
+  margin: auto;
+  min-height: 380px;
+  color: #fff;
+  border: 2px solid #1de9b617;
+  box-shadow: 0 0 8px 1px #1de9b60c;
+  transition:
+    box-shadow 0.3s,
+    border 0.3s,
+    transform 0.3s,
+    filter 0.3s;
+  filter: blur(1.5px) brightness(0.7);
+  opacity: 0;
+
+}
+
+.swiper-slide-active .roadmap-card {
+  border: 2px solid #1de9b617;
+  box-shadow: 0 0 8px 1px #1de9b60c;
+  filter: none;
+  opacity: 1;
+  transform: scale(1.08);
+  z-index: 2;
+  /* background: rgba(18, 28, 48, 1); */
+}
+
+.swiper-slide-next .roadmap-card,
+.swiper-slide-prev .roadmap-card {
+  filter: blur(0.5px) brightness(0.85);
+  opacity: 0.85;
+}
+
+.roadmap-quarter {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.roadmap-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roadmap-list li {
+  /* color: #ffffff; */
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  /* color: #fff !important; */
+  filter: drop-shadow(0 0 2px #1de9b6);
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.6rem !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 3px !important;
+  background: #fff !important;
+  border-radius: 1px !important;
+  opacity: 0.5;
+  margin: 0 4px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1de9b6;
+  opacity: 1;
+}
+
+/* ----------------Footer Power Contact button---------------------  */
+/* .power-contact-btn {
+  background: linear-gradient(135deg, #7fffd4, #5ecbcb);
+  color: black;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(127, 255, 212, 0.8);
+  transition: all 0.3sease-in-out;
+  transition: 1.5s ease;
+}
+
+.power-contact-btn:hover {
+  box-shadow: 0 0 20px rgba(127, 255, 212, 0.393);
+  border: 1px solid rgba(127, 255, 212, 0.61);
+  transform: scale(1.0);
+  text-decoration: none !important;
+  color: #fff;
+  background: linear-gradient(135deg, #7fffd400, #5ecbcb00);
+} */
+
+
+.custom-dashed-border {
+  border: 2px dashed gray;
+  padding: 24px 10px;
+  border-radius: 35px;
+  margin-bottom: 30px;
+  position: relative;
+}
