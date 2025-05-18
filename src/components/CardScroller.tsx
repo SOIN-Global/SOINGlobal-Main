@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Marquee } from "@/components/magicui/marquee";
 import Image, { StaticImageData } from "next/image";
 import userImg1 from "@/assets/review/user-1.png";
 import userImg2 from "@/assets/review/user-2.png";
@@ -35,12 +34,10 @@ const reviews = [
     },
     {
         body: "There are plenty of fake KOL’s who’d gladly help you with your-people who care more about their pockets han their community. Gp knock on their door, not mine",
-        img: userImg6,
+        img: userImg3,
     },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
     img,
@@ -76,24 +73,26 @@ const ReviewCard = ({
     );
 };
 
+
 export function CardScroller() {
     return (
-        <div className="py-10 text-center max-w-screen-2xl m-auto">
-            <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-10">Together, We Build a Scam-Free Future! <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
-            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                <Marquee pauseOnHover className="[--duration:40s]">
-                    {firstRow.map((review, idx) => (
+        <div className="pb-10 text-center max-w-screen-2xl m-auto">
+            <div className="relative overflow-hidden ">
+                <div className="flex w-max h-40 gap-5 py-3 animate-scroll-restart ">
+                    {reviews.concat(reviews).map((review, idx) => (
                         <ReviewCard key={idx} {...review} />
                     ))}
-                </Marquee>
-                <Marquee reverse pauseOnHover className="[--duration:40s]">
-                    {secondRow.map((review, idx) => (
+                </div>
+            </div>
+            {/* Reverse Scroller */}
+            <div className="relative overflow-hidden ">
+                <div className="flex w-max h-40 gap-5 py-3 animate-scroll-reverse">
+                    {reviews.concat(reviews).map((review, idx) => (
                         <ReviewCard key={idx} {...review} />
+
                     ))}
-                </Marquee>
-                {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div> */}
+                </div>
             </div>
         </div>
     );
-}
+};

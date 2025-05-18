@@ -2,11 +2,19 @@
 import { useEffect, useState } from 'react';
 
 const suggestions = [
-    'Make a Twitter post',
-    'Build a website',
-    'Launch your idea',
-    'Grow your brand',
+  'Best Twitter influencers for a meme coin launch',
+  'Where should I promote a Solana token this week',
+  'Which call groups drive the most trading volume',
+  'Top Telegram shillers for a $10K campaign',
+  'How to get 100K volume with a $5K budget',
+  'Trending KOLs in the DeFi space right now',
+  'Best platforms to promote my new NFT-less token',
+  'Find top crypto voices in the U.S. for token hype',
+  'Suggest micro-influencers for an IDO promo',
+  'Who’s leading engagement for GameFi this week?',
+  'Suggest some game streamers to promote our game.',
 ];
+
 
 export default function TypewriterInput() {
     const [displayText, setDisplayText] = useState('');
