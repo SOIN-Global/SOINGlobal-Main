@@ -8,7 +8,7 @@ export default function FormModal({ onClose }: { onClose: () => void }) {
   });
 
   const [formStatus, setFormStatus] = useState({
-    success: true,
+    success: false,
     loading: false,
   });
 
