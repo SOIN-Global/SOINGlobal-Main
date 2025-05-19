@@ -177,7 +177,7 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
           <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg text-center max-w-md w-full">
             <h2 className="text-green-600 text-xl font-semibold mb-2">🎉 Thank You!</h2>
             <p className="text-gray-700 dark:text-gray-200">
-              Your message has been sent successfully. We'll get back to you shortly.
+              Your message has been sent successfully. We&apos;ll get back to you shortly.
             </p>
             <button
               onClick={onClose}

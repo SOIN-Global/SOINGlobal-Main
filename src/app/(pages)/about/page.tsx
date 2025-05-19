@@ -2,7 +2,7 @@
 import React from 'react'
 import { CardScroller } from '@/components/CardScroller'
 
-export default function () {
+const about =  () => {
     return (
         <>
             <div className="text-center py-10 max-w-screen-xl m-auto px-4">
@@ -10,7 +10,7 @@ export default function () {
                 <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-10">About Us <span className="mt-2 block w-24 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
                 <p className='text-left text-black dark:text-white md:text-lg max-w-screen-lg m-auto'>SOIN Global is a decentralized platform that streamlines Web3 collaborations by directly connecting brands with service providers. Using blockchain and smart contracts, we ensure secure transactions, transparency, and trust. Our ecosystem eliminates intermediaries, enabling seamless project execution and fair payments. With SOIN, Web3 businesses can collaborate efficiently and scale effortlessly.
                     <br /> <br />
-                    SOIN Global empowers brands and creators with AI-driven insights and automated workflows for smarter collaborations. Whether you're seeking services or offering expertise, our platform ensures efficiency, security, and success in the Web3 space.
+                    SOIN Global empowers brands and creators with AI-driven insights and automated workflows for smarter collaborations. Whether you&apos;re seeking services or offering expertise, our platform ensures efficiency, security, and success in the Web3 space.
                 </p>
 
                 {/* review card section  */}
@@ -53,3 +53,4 @@ export default function () {
         </>
     )
 }
+export default about
