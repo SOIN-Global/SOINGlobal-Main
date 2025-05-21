@@ -57,11 +57,11 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                // Card background and border
+                // Card background & border 
                 "relative flex h-full w-96 cursor-pointer overflow-hidden rounded-sm dark:border border-[#262B35] bg-[#EFF3EF] dark:bg-[#262B35] p-6 dark:shadow-lg",
-                // Text color
+                // Text color 
                 "text-black/70 dark:text-white",
-                // Hover effect
+                // Hover effect 
                 "dark:hover:bg-[#232730] transition-colors duration-200"
             )}
         >
