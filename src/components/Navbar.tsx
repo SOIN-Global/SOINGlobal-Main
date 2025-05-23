@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="">
               <Link href="/" className="text-2xl flex items-center gap-2">
                 <Image src={logo} alt='logo' height={34} width={34} quality={100} />
-                <span className='text-[#1E233F] dark:text-white'><strong className='font-semibold'>SOIN</strong> Global</span>
+                <span className='text-[#1E233F] dark:text-white font-outfit'><strong className='font-semibold'>SOIN</strong> Global</span>
               </Link>
             </div>
 
