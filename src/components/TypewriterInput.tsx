@@ -14,6 +14,13 @@ const suggestions = [
     'Suggest micro-influencers for an IDO promo',
     'Who’s leading engagement for GameFi this week?',
     'Suggest some game streamers to promote our game.',
+    'Find top Instagram influencers for skincare in the U.S.',
+    'Best-performing TikTok trends for beauty products in May',
+    'Top YouTubers for finance app promotions',
+    'Suggest Twitch streamers for mobile shooter games',
+    'How to reach 100K impressions with a $2K ad budget',
+    'Suggest micro-influencers for productivity apps on Instagram',
+    'Who’s trending in sustainable lifestyle content this week?'
 ];
 
 

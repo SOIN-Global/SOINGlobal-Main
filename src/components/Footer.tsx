@@ -24,16 +24,16 @@ const Footer = () => {
                     <div className="w-1/3">
                         <h3 className="text-[#48A3A4] dark:text-[#C6EFEF] font-bold mb-5">Resources</h3>
                         <li className="mb-3 list-none">
-                            <Link href="/">White Paper</Link>
+                            <Link href="https://soin-global.gitbook.io/soin-social-intelligence">White Paper</Link>
                         </li>
                         <li className="mb-3 list-none">
-                            <Link href="/">News letter</Link>
+                            <Link href="https://t.me/SOINGLOBALAnnoucement">News letter</Link>
                         </li>
                     </div>
                     <div className="w-1/3">
                         <h3 className="text-[#48A3A4] dark:text-[#C6EFEF] font-bold mb-5">Company</h3>
                         <li className="mb-3 list-none">
-                            <Link href="/">About Us</Link>
+                            <Link href="/about">About Us</Link>
                         </li>
                         <li className="mb-3 list-none">
                             <Link href="/">Contact us</Link>
@@ -42,18 +42,18 @@ const Footer = () => {
                     <div className="w-1/3">
                         <h3 className="text-[#48A3A4] dark:text-[#C6EFEF] font-bold mb-5">Social Media</h3>
                         <li className="mb-3 list-none">
-                            <Link href="/" className="flex items-center gap-2">
-                                <Image src={twitterImage} alt="" quality={100} width={30} height={30} className="w-5 object-cover" />
+                            <Link href="https://x.com/SoinGlobal" className="flex items-center gap-2">
+                                <Image src={twitterImage} alt="" quality={100} width={30} height={30} className="w-6 object-cover" />
                                 Twitter</Link>
                         </li>
                         <li className="mb-3 list-none">
-                            <Link href="/" className="flex items-center gap-2">
+                            <Link href="https:t.me/SOINGlobal" className="flex items-center gap-2">
                                 <Image src={telegramImage} alt="" quality={100} width={30} height={30} className="w-6 object-cover" />
                                 Telegram</Link>
                         </li>
                         <li className="mb-3 list-none">
-                            <Link href="/" className="flex items-center gap-2">
-                                <Image src={mediumImage} alt="" quality={100} width={30} height={30} className="w-8 object-cover" />
+                            <Link href="https://medium.com/@soinglobalblog" className="flex items-center gap-2">
+                                <Image src={mediumImage} alt="" quality={100} width={30} height={30} className="w-6 object-cover" />
                                 Medium</Link>
                         </li>
                     </div>
