@@ -9,8 +9,16 @@ export const metadata: Metadata = {
   title: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands",
   description:
     "Drive engagement, volume, and reach with SOIN – the first AI-driven influencer platform tailored for Web3, DeFi, and crypto startups.",
-  keywords:
-    "free Web3 influencer marketing, crypto influencer platform, AI influencer matching, free Web3 marketing tool, crypto brand promotion, DeFi influencer campaigns, free blockchain marketing platform, token volume growth, AI-driven campaign planner",
+  keywords: [
+    "free Web3 influencer marketing",
+    "crypto influencer platform, AI influencer matching",
+    "free Web3 marketing tool",
+    "crypto brand promotion",
+    "DeFi influencer campaigns",
+    "free blockchain marketing platform",
+    "token volume growth",
+    "AI-driven campaign planner",
+  ],
   authors: [{ name: "Soin Global", url: "https://www.soinglobal.com" }],
   creator: "SOIN Global",
   publisher: "SOIN Global",
@@ -33,7 +41,7 @@ export const metadata: Metadata = {
         url: "https://www.soinglobal.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SOIN Global Open Graph Image",
+        alt: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands",
       },
     ],
   },
@@ -43,7 +51,10 @@ export const metadata: Metadata = {
     title: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands",
     description:
       "Drive engagement, volume, and reach with SOIN – the first AI-driven influencer platform tailored for Web3, DeFi, and crypto startups.",
-    images: ["https://www.soinglobal.com/og-image.png"],
+    images: [{
+      url: "https://www.soinglobal.com/og-image.png",
+      alt: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands"
+    }],
     creator: "@SoinGlobal",
   },
 };
