@@ -3,7 +3,50 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
 import Head from 'next/head';
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands",
+  description:
+    "Drive engagement, volume, and reach with SOIN – the first AI-driven influencer platform tailored for Web3, DeFi, and crypto startups.",
+  keywords:
+    "free Web3 influencer marketing, crypto influencer platform, AI influencer matching, free Web3 marketing tool, crypto brand promotion, DeFi influencer campaigns, free blockchain marketing platform, token volume growth, AI-driven campaign planner",
+  authors: [{ name: "Ramesh Das Construction Pvt Ltd", url: "https://rdcpl.in" }],
+  creator: "SOIN Global",
+  publisher: "SOIN Global",
+  metadataBase: new URL("https://soin.global"),
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
+
+  openGraph: {
+    title: "SOIN Global",
+    description:
+      "The first AI influencer marketing platform for crypto and Web3 projects.",
+    url: "https://soin.global",
+    siteName: "SOIN Global",
+    type: "website",
+    images: [
+      {
+        url: "https://soin.global/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SOIN Global Open Graph Image",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "SOIN Global | AI-Powered Influencer Marketing for Web3 Brands",
+    description:
+      "Drive engagement, volume, and reach with SOIN – the first AI-driven influencer platform tailored for Web3, DeFi, and crypto startups.",
+    images: ["https://soin.global/og-image.png"],
+    creator: "@SoinGlobal", 
+  },
+};
 
 export default function RootLayout({
   children,
