@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Drive engagement, volume, and reach with SOIN – the first AI-driven influencer platform tailored for Web3, DeFi, and crypto startups.",
   keywords:
     "free Web3 influencer marketing, crypto influencer platform, AI influencer matching, free Web3 marketing tool, crypto brand promotion, DeFi influencer campaigns, free blockchain marketing platform, token volume growth, AI-driven campaign planner",
-  authors: [{ name: "Ramesh Das Construction Pvt Ltd", url: "https://rdcpl.in" }],
+  authors: [{ name: "Soin Global", url: "https://soin.global" }],
   creator: "SOIN Global",
   publisher: "SOIN Global",
   metadataBase: new URL("https://soin.global"),
