@@ -1,140 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @import "tw-animate-css";
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-
-/* ---break---  */
-/* @custom-variant dark (&:is(.dark *)); */
-/* ---break---  */
 
 body {
   font-family: "Inter", sans-serif;
   font-style: normal;
 }
 
-
-/* --------------Navbar style---------------*/
-/* .nav-links a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 18px;
-  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-} */
-
-/* .nav-links a:hover {
-  background: linear-gradient(90deg, #8ff4f4, #8ff4f4, #fff8bb, #daccef, #daccef);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-} */
-
-/* .nav_active {
-  background: linear-gradient(90deg, #8ff4f4, #8ff4f4, #fff8bb, #daccef, #daccef) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  display: inline-block;
-} */
-/* 
-.nav_btn1 {
-  background: linear-gradient(131deg, #98faff, #9bf5fb, #6fe7db);
-  color: black;
-  font-weight: 300;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(127, 255, 212, 0.8);
-  transition: all 0.3s ease-in-out;
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
 }
 
-.nav_btn1:hover {
-  box-shadow: 0 0 8px rgba(127, 255, 212, 1);
-  text-decoration: none !important;
-} */
-
-
-
-/* ------------------ header/ Hero style------------------  */
-/* .bannersec h1 {
-  background: linear-gradient(90deg, #7fffd4, #fdfd96, #d8bfd8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  animation: gradientAnimation 3s infinite linear;
-  background: linear-gradient(90deg, #66ffcc, #ffff66, #ffccff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 3s infinite linear;
-} */
-
-/* @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-} */
-
-
-/* .banner_btn {
-  background: linear-gradient(131deg, #98faff, #9bf5fb, #6fe7db, #6fe7db, #6fe7db);
-  box-shadow: 0 0 10px rgba(127, 255, 212, 0.8);
-  transition: all 0.3s ease-in-out;
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-
-.banner_btn:hover {
-  box-shadow: 0 0 20px rgba(127, 255, 212, 1);
-  transform: scale(1.05);
-  text-decoration: none !important;
-} */
-
-
-
-/* ----------------marquee style/ Auto Card Scroller------------------- */
-
-@theme inline {
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
-}
-
 
 /* ------------------RoadmapSwiper/ CardSwiper-------------------   */
 .roadmap-swiper-bg {
@@ -251,30 +139,6 @@ body {
   background: #1de9b6;
   opacity: 1;
 }
-
-/* ----------------Footer Power Contact button---------------------  */
-/* .power-contact-btn {
-  background: linear-gradient(135deg, #7fffd4, #5ecbcb);
-  color: black;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(127, 255, 212, 0.8);
-  transition: all 0.3sease-in-out;
-  transition: 1.5s ease;
-}
-
-.power-contact-btn:hover {
-  box-shadow: 0 0 20px rgba(127, 255, 212, 0.393);
-  border: 1px solid rgba(127, 255, 212, 0.61);
-  transform: scale(1.0);
-  text-decoration: none !important;
-  color: #fff;
-  background: linear-gradient(135deg, #7fffd400, #5ecbcb00);
-} */
-
 
 .custom-dashed-border {
   border: 2px dashed gray;

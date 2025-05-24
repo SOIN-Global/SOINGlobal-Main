@@ -9,10 +9,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        jakarta: ['"Plus Jakarta Sans"', "sans-serif"],
-        outfit: ['"Outfit"', "sans-serif"],
-      },
       keyframes: {
         scroll: {
           "0%": {
