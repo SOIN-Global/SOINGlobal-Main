@@ -7,7 +7,7 @@ import ContactModal from "@/components/ContactFormModel";
 import Image from 'next/image';
 
 const PoweredBySection = () => {
-      const [showContactModal, setShowContactModal] = useState(false);
+    const [showContactModal, setShowContactModal] = useState(false);
 
     return (
         <>
@@ -24,7 +24,7 @@ const PoweredBySection = () => {
                 <div className="flex justify-center mt-10 h-12">
                     <button
                         onClick={() => setShowContactModal(true)}
-                        className="px-10 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)]"
+                        className="h-[58px] w-[220px] text-white dark:text-black font-medium rounded-xl cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)] z-10"
                     >
                         Contact Us
                     </button>

@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className=' relative z-10'>
-      <nav className="w-full transition-transform duration-300 mt-3 md:mt-6 max-w-6xl m-auto rounded-2xl md:bg-[#C6EFEF] dark:md:bg-[#152030] border-[#ffffff73] text-black dark:text-white md:border px-4">
+      <nav className="w-full transition-transform duration-300 mt-3 md:mt-6 max-w-6xl m-auto rounded-2xl md:bg-[#C6EFEF] dark:md:bg-[#152030] border-[#ffffff73] text-black dark:text-white text-lg md:border px-4">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center h-16">
             <div className="">
@@ -33,14 +33,17 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-2 md:gap-6">
-              <div className="hidden lg:flex space-x-8 nav-links transition-transform duration-300">
+              <div className="hidden lg:flex space-x-14 nav-links transition-transform duration-300">
                 <Link href="/" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Home</Link>
                 <Link href="#services" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Services</Link>
                 <Link href="#Roadmap" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Roadmap</Link>
                 <Link href="/about" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>About</Link>
                 <Link href="#doc" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Doc</Link>
               </div>
-              <div className="hidden lg:flex space-x-8">
+            </div>
+
+            <div className="flex items-center gap-2">
+              <div className="hidden lg:flex gap-4">
                 <div className='relative p-[1px] flex rounded-xl bg-gradient-to-r from-[#CFBEFF] via-[#00F2EACC] to-[#ACF7AC]'>
                   <div className="px-4 py-2 bg-[#C6EFEF] dark:bg-[#152030] rounded-xl">
                     DApp
@@ -48,9 +51,9 @@ const Navbar = () => {
                 </div>
                 <Link
                   href=""
-                  className="px-4 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)]"
+                  className="px-6 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)]"
                 >
-                  Sign up for Free
+                  Log in
                 </Link>
               </div>
               <ThemeToggleButton />

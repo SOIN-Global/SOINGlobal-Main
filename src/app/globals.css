@@ -141,7 +141,7 @@ body {
 }
 
 .custom-dashed-border {
-  border: 2px dashed gray;
+  border: 2px dashed #ccc; /* thinner border and lighter gray */
   padding: 24px 10px;
   border-radius: 35px;
   margin-bottom: 30px;

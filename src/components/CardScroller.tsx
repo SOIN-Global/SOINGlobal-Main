@@ -58,7 +58,7 @@ const ReviewCard = ({
         <figure
             className={cn(
                 // Card background & border 
-                "relative flex h-full w-96 cursor-pointer overflow-hidden rounded-sm dark:border border-[#262B35] bg-[#EFF3EF] dark:bg-[#262B35] p-6 dark:shadow-lg",
+                "relative flex h-full w-96 cursor-pointer overflow-hidden dark:border border-[#262B35] bg-[#EFF3EF] dark:bg-[#262B35] p-6 dark:shadow-lg rounded-lg",
                 // Text color 
                 "text-black/70 dark:text-white",
                 // Hover effect 
@@ -66,7 +66,7 @@ const ReviewCard = ({
             )}
         >
             <div className="flex gap-4 items-center">
-                <Image className="rounded-full border-2 border-[#5DB9F6]" width={40} height={40} alt="" src={img} />
+                <Image className="rounded-full border-2 border-[#5DB9F6]" width={60} height={60} alt="" src={img} />
                 <blockquote className="mt-2 text-sm text-left">{formattedBody}</blockquote>
             </div>
         </figure>

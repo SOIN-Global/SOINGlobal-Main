@@ -8,7 +8,7 @@ const DiscoverGateway = () => {
             <div className="relative flex flex-col md:flex-row justify-between items-center gap-6 p-8 bg-[#210F53] rounded-lg md:h-[400px] my-22 md:border border-none dark:border-white/30 max-w-screen-xl m-auto mx-4 md:mx-auto">
                 <div className="w-full md:w-1/2 text-white/80">
                     <p className="text-xl"><span className="font-bold text-[#CFBEFF]">Discover the Gateway:</span> Earn crypto rewards on your Web3 journey. Engage with your favorite communities and boost your portfolio with our AI agent strategies—powered by real-time sentiment and data intelligence.</p>
-                    <button className="mt-6 px-12 py-2 rounded-lg border border-[#CFBEFF] text-white font-medium hover:bg-[#cfbeff22] transition">
+                    <button className="mt-6 px-12 py-2 rounded-lg border border-[#EFF] text-white font-medium hover:bg-[#cfbeff22] transition">
                         AI-Agent
                     </button>
                 </div>

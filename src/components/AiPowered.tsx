@@ -28,13 +28,8 @@ const AiPowered = () => {
             {/* ai powered social intelligence start  */}
             <div className="text-center py-10 max-w-screen-xl m-auto px-4">
                 <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-10">AI-Powered Social Intelligence  <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
-                <div className="flex flex-wrap justify-center gap-4 md:text-lg">
-                    <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Smarter Influencer Marketing</span>
-                    <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Maximized Engagement</span>
-                    <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Better ROI</span>
-                    <span className="px-4 py-2 bg-black/10 dark:bg-white/10 rounded-full dark:text-[#CFBEFF] hover:bg-white/20 transition-all duration-300">Say goodbye to guesswork</span>
-                </div>
-                <div className="flex justify-center items-center gap-5 flex-wrap py-10">
+                <p className='text-[#5B4A9A] dark:text-[#CFBEFF] text-center text-sm'>Smarter Influencer Marketing | Maximized Engagement | Better ROI | Say goodbye to guesswork </p>
+                <div className="flex justify-center items-center gap-5 flex-wrap py-5">
                     <div className="w-full md:w-[42%]">
                         <Image src={resolvedTheme === 'dark' ? profileImage : profileLightImage}
                          alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />
