@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import FormModal from "@/components/FormModel";
 import TypewriterInput from "@/components/TypewriterInput";
 
