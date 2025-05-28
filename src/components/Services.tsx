@@ -30,8 +30,8 @@ const Services = () => {
     ];
 
     const renderServiceCard = ({ title, desc }: Service, index: number) => (
-        <div className="md:w-2/3 gradient-border rounded-xl m-auto" key={index}>
-            <p className="w-full py-3 px-2 md:pl-6 m-auto rounded-xl bg-[#EAF8F8] dark:bg-[#171d33] text-black dark:text-white/90">
+        <div className="md:w-2/3 gradient-border-light rounded-xl m-auto" key={index}>
+            <p className="w-full py-3 px-2 md:pl-6 m-auto rounded-xl bg-[#F5FCFC] dark:bg-[#171d33] text-black dark:text-white/90">
                 <strong>{title} : </strong>{desc}
             </p>
         </div>

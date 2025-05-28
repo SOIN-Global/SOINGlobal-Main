@@ -91,6 +91,18 @@ body {
       #5B4A9A 100%);
   /* display: inline-block; */
 }
+.gradient-border-light {
+  padding: 1px;
+  /* border width */
+  background: linear-gradient(to right,
+      #4ea9a988 0%,
+      #4ea9a980 19%,
+      #a1920e7c 43%,
+      #a1920e79 63%,
+      #5b4a9a69 82%,
+      #5b4a9a73 100%);
+  /* display: inline-block; */
+}
 
 .gradient-border-inner {
   /* card background */
