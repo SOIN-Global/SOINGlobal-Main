@@ -49,25 +49,22 @@ body {
 
 .roadmap-card {
   /* background: rgba(18, 28, 48, 0.95); */
-  border-radius: 20px;
-  padding: 36px 32px 32px 32px;
+  padding: 32px;
   margin: auto;
   min-height: 380px;
   color: #fff;
-  border: 2px solid #1de9b617;
+  /* border: 2px solid #1de9b617; */
   box-shadow: 0 0 8px 1px #1de9b60c;
   transition:
     box-shadow 0.3s,
     border 0.3s,
     transform 0.3s,
     filter 0.3s;
-  filter: blur(1.5px) brightness(0.7);
   opacity: 0;
 
 }
 
 .swiper-slide-active .roadmap-card {
-  border: 2px solid #1de9b617;
   box-shadow: 0 0 8px 1px #1de9b60c;
   filter: none;
   opacity: 1;
@@ -78,8 +75,28 @@ body {
 
 .swiper-slide-next .roadmap-card,
 .swiper-slide-prev .roadmap-card {
-  filter: blur(0.5px) brightness(0.85);
+  /* filter: blur(0.5px) brightness(0.85); */
   opacity: 0.85;
+}
+
+.gradient-border {
+  padding: 1px;
+  /* border width */
+  background: linear-gradient(to right,
+      #4EA9A9 0%,
+      #4EA9A9 19%,
+      #A1920E 43%,
+      #A1920E 63%,
+      #5B4A9A 82%,
+      #5B4A9A 100%);
+  /* display: inline-block; */
+}
+
+.gradient-border-inner {
+  /* card background */
+  border-radius: 0.875rem;
+  height: 100%;
+  width: 100%;
 }
 
 .roadmap-quarter {
@@ -141,7 +158,8 @@ body {
 }
 
 .custom-dashed-border {
-  border: 2px dashed #ccc; /* thinner border and lighter gray */
+  border: 2px dashed #ccc;
+  /* thinner border and lighter gray */
   padding: 24px 10px;
   border-radius: 35px;
   margin-bottom: 30px;

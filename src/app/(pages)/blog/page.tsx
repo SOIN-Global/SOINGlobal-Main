@@ -35,17 +35,11 @@ const blogs = [
 ];
 
 export default function BlogPage() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-black dark:text-[#C6EFEF] mb-8 text-center font-jakarta">
-          Blog & Announcements
-        </h1>
+        <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Blog & Announcements<span className="mt-2 block w-60 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
         <div className="flex flex-wrap gap-8 justify-center">
           {blogs.map((blog) => (
             <Link

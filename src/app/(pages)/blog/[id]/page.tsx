@@ -2,8 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const blogs = [
   {
@@ -45,10 +43,7 @@ export default function BlogDetailPage() {
   const { id } = useParams();
   const blog = blogs.find((b) => b.id === Number(id));
   const recentPosts = blogs.filter((b) => b.id !== Number(id));
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+ 
   if (!blog) return <div className="text-center py-20 text-xl">Blog not found.</div>;
 
   return (
@@ -77,7 +72,7 @@ export default function BlogDetailPage() {
               src={blog.image}
               alt={blog.title}
               fill
-              className="object-cover"
+              className="object-contain "
               sizes="(max-width: 768px) 100vw, 66vw"
             />
           </div>

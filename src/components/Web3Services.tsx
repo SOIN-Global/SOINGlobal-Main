@@ -11,17 +11,17 @@ const Web3Services = () => {
         <div className="text-center py-10 max-w-screen-xl m-auto px-4">
             <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-6">Innovating the Future of Web3 Services <span className="mt-2 block w-40 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
             {/* cards  */}
-            <div className="flex justify-center items-center flex-wrap gap-4 mt-6 md:m-0">
-                <div className="w-[46%] md:w-[22%] md:mt-[200px]">
+            <div className="flex justify-center items-center flex-wrap gap-4 mt-6 md:mt-16">
+                <div className="w-[46%] md:w-[22%] md:mt-[100px]">
                     <Image src={serviceImage1} alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />
                 </div>
-                <div className="w-[46%] md:w-[22%] ">
+                <div className="w-[46%] md:w-[22%] md:-mt-[100px]">
                     <Image src={serviceImage2} alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />
                 </div>
-                <div className="w-[46%] md:w-[22%] md:mt-[200px]">
+                <div className="w-[46%] md:w-[22%] md:mt-[100px]">
                     <Image src={serviceImage3} alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />
                 </div>
-                <div className="w-[46%] md:w-[22%]">
+                <div className="w-[46%] md:w-[22%] md:-mt-[100px]">
                     <Image src={serviceImage4} alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />
                 </div>
 

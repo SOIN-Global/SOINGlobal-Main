@@ -59,8 +59,8 @@ export default function TypewriterInput() {
 
 
     return (
-        <div className="pt-4 w-11/12 md:max-w-2xl mx-auto">
-            <div className="flex bg-[#111827]/10 dark:bg-[#111827] border-purple-200 border dark:border-purple-500 rounded-full px-4 py-3">
+        <div className="pt-4 w-11/12 md:max-w-2xl mx-auto gradient-border rounded-full">
+            <div className="flex bg-[#111827]/10 dark:bg-[#111827] bg-white rounded-full px-4 py-3">
                 <input
                     ref={inputRef}
                     type="text"

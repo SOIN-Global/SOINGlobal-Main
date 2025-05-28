@@ -77,43 +77,44 @@ const roadmapData = [
 ];
 
 const RoadmapSwiper = () => (
-    <div className="roadmap-swiper-bg max-w-screen-xl m-auto">
-      <Swiper
-        effect="coverflow"
-        // grabCursor={true}
-        centeredSlides={true}
-        modules={[EffectCoverflow, Navigation, Pagination, Keyboard, Mousewheel]}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 180,
-          modifier: 3,
-          slideShadows: false
-        }}
-        keyboard={{ enabled: true }}
-        // mousewheel={{ thresholdDelta: 70 }}
-        loop={true}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }}
-        pagination={{
-          el: ".swiper-pagination",
-          clickable: true
-        }}
-        breakpoints={{
-          640: { slidesPerView: 3 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 3 },
-          1560: { slidesPerView: 3 },
-          2060: { slidesPerView: 3 }
-        }}
-        className="roadmap-swiper"
-      >
-        {roadmapData.map((item, index) => (
-          <SwiperSlide key={index}>
-            {/* css is in global.css  */}
-            <div className="roadmap-card w-4/5 md:w-auto bg-gradient-to-b from-[#ffffff] via-[#C6EFEF] to-[#C6EFEF] dark:bg-[rgb(18,28,48)] dark:bg-none">
+  <div className="roadmap-swiper-bg max-w-screen-xl m-auto">
+    <Swiper
+      effect="coverflow"
+      // grabCursor={true}
+      centeredSlides={true}
+      modules={[EffectCoverflow, Navigation, Pagination, Keyboard, Mousewheel]}
+      coverflowEffect={{
+        rotate: 0,
+        stretch: 0,
+        depth: 180,
+        modifier: 3,
+        slideShadows: false
+      }}
+      keyboard={{ enabled: true }}
+      // mousewheel={{ thresholdDelta: 70 }}
+      loop={true}
+      navigation={{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }}
+      pagination={{
+        el: ".swiper-pagination",
+        clickable: true
+      }}
+      breakpoints={{
+        640: { slidesPerView: 3 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 3 },
+        1560: { slidesPerView: 3 },
+        2060: { slidesPerView: 3 }
+      }}
+      className="roadmap-swiper"
+    >
+      {roadmapData.map((item, index) => (
+        <SwiperSlide key={index}>
+          {/* css is in global.css  */}
+          <div className="roadmap-card gradient-border rounded-3xl w-4/5 h-[500px] md:w-auto ">
+            <div className="bg-gradient-to-b from-[#ffffff] via-[#F9FEFE] to-[#ECFAFA] dark:bg-[rgb(18,28,48)] dark:bg-none w-full h-full rounded-3xl p-8">
               <h2 className="roadmap-quarter text-[#48A3A4] dark:text-[#C6EFEF]">{item.quarter}</h2>
               <h3 className="roadmap-title text-[#5B4A9A] dark:text-[#CFBEFF]">{item.title}</h3>
               <ul className="roadmap-list text-black/70 dark:text-white/90">
@@ -122,13 +123,15 @@ const RoadmapSwiper = () => (
                 ))}
               </ul>
             </div>
-          </SwiperSlide>
-        ))}
-        <div className="swiper-button-next text-black dark:text-white"></div>
-        <div className="swiper-button-prev text-black dark:text-white"></div>
-        <div className="swiper-pagination"></div>
-      </Swiper>
-    </div>
-  );
-  
-  export default RoadmapSwiper;
+
+          </div>
+        </SwiperSlide>
+      ))}
+      <div className="swiper-button-next text-black dark:text-white"></div>
+      <div className="swiper-button-prev text-black dark:text-white"></div>
+      <div className="swiper-pagination"></div>
+    </Swiper>
+  </div>
+);
+
+export default RoadmapSwiper;
