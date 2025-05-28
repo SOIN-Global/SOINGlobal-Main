@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import blogImg1 from "@/assets/services/quality-service-1.png"
+import blogImg2 from "@/assets/services/quality-service-2.png";
+import blogImg3 from "@/assets/services/quality-service-3.png";
 
 const blogs = [
   {
     id: 1,
     title: "SupraNova is Live on Public Testnet: The First Truly Bridgeless Cross-Chain Messaging",
     date: "22 days ago",
-    image: require("@/assets/services/quality-service-1.png"),
+    image: blogImg1,
     tags: ["Announcements", "DeFi"],
     excerpt:
       "SupraNova is now live on public testnet, enabling the first truly bridgeless cross-chain messaging between Supra and Ethereum's Goerli testnet. Say goodbye to risky bridges and fragmented liquidity—here's what you need to know.",
@@ -18,7 +19,7 @@ const blogs = [
     id: 2,
     title: "Supra Automation is Live on Public Testnet, Starting the AutoFi Revenue Engine",
     date: "1 month ago",
-    image: require("@/assets/services/quality-service-2.png"),
+    image: blogImg2,
     tags: ["Announcements", "DeFi", "Use Cases"],
     excerpt:
       "Supra's system-level automation is about to go live on the public testnet, enabling blockchains to self-execute DeFi processes like arbitrage and liquidations. This marks the beginning of AutoFi—an automation-powered revenue model that could replace fees and emissions in the next era of crypto.",
@@ -27,7 +28,7 @@ const blogs = [
     id: 3,
     title: "Introducing the $SUPRA Token: Tokenomics and Utility",
     date: "5 months ago",
-    image: require("@/assets/services/quality-service-3.png"),
+    image: blogImg3,
     tags: ["Announcements", "Articles", "Tutorials/Overviews", "Use Cases"],
     excerpt:
       "Supra prioritizes its community and ecosystem, reflected in $SUPRA's thoughtfully designed tokenomics. With no team tokens unlocked at TGE and gradual releases planned, $SUPRA drives long-term growth and utility within Supra's MultiVM Layer 1 ecosystem.",

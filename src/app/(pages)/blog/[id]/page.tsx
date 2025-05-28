@@ -2,13 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import blogImg1 from "@/assets/services/quality-service-1.png"
+import blogImg2 from "@/assets/services/quality-service-2.png";
+import blogImg3 from "@/assets/services/quality-service-3.png";
 
 const blogs = [
   {
     id: 1,
     title: "SupraNova is Live on Public Testnet: The First Truly Bridgeless Cross-Chain Messaging",
     date: "May 05, 2025",
-    image: require("@/assets/services/quality-service-1.png"),
+    image: blogImg1,
     tags: ["Announcements", "DeFi"],
     content:
       "Chains are silos. Liquidity is fragmented. Data is locked behind bridges that introduce new points of failure. Today, we break through those walls with SupraNova, a truly bridgeless cross-chain communication protocol, now live on Supra's public testnet. With this release, SupraNova enables seamless messaging between Supra and Ethereum's Goerli testnet. Say goodbye to risky bridges and fragmented liquidity—here's what you need to know...",
@@ -19,7 +22,7 @@ const blogs = [
     id: 2,
     title: "Supra Automation is Live on Public Testnet, Starting the AutoFi Revenue Engine",
     date: "Apr 01, 2025",
-    image: require("@/assets/services/quality-service-2.png"),
+    image: blogImg2,
     tags: ["Announcements", "DeFi", "Use Cases"],
     content:
       "Supra's system-level automation is about to go live on the public testnet, enabling blockchains to self-execute DeFi processes like arbitrage and liquidations. This marks the beginning of AutoFi—an automation-powered revenue model that could replace fees and emissions in the next era of crypto. Here's what you need to know...",
@@ -30,7 +33,7 @@ const blogs = [
     id: 3,
     title: "Introducing the $SUPRA Token: Tokenomics and Utility",
     date: "Jan 01, 2025",
-    image: require("@/assets/services/quality-service-3.png"),
+    image: blogImg3,
     tags: ["Announcements", "Articles", "Tutorials/Overviews", "Use Cases"],
     content:
       "Supra prioritizes its community and ecosystem, reflected in $SUPRA's thoughtfully designed tokenomics. With no team tokens unlocked at TGE and gradual releases planned, $SUPRA drives long-term growth and utility within Supra's MultiVM Layer 1 ecosystem. Here's what you need to know...",
@@ -43,7 +46,7 @@ export default function BlogDetailPage() {
   const { id } = useParams();
   const blog = blogs.find((b) => b.id === Number(id));
   const recentPosts = blogs.filter((b) => b.id !== Number(id));
- 
+
   if (!blog) return <div className="text-center py-20 text-xl">Blog not found.</div>;
 
   return (

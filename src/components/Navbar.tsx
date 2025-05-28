@@ -37,7 +37,7 @@ const Navbar = () => {
                 <Link href="/" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Home</Link>
                 <Link href="#services" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Services</Link>
                 <Link href="#Roadmap" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Roadmap</Link>
-                <Link href="/about" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>About</Link>
+                <Link href="/blog" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Blogs</Link>
                 <Link href="#doc" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Doc</Link>
               </div>
             </div>
