@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className=' relative z-10'>
-      <nav className="w-full transition-transform duration-300 mt-3 md:mt-6 max-w-6xl m-auto rounded-2xl md:bg-[#C6EFEF] dark:md:bg-[#152030] border-[#ffffff73] text-black dark:text-white text-lg md:border px-4">
+      <nav className="w-full transition-transform font-light duration-300 mt-3 md:mt-6 max-w-6xl m-auto rounded-2xl md:bg-[#C6EFEF] dark:md:bg-[#152030] border-[#ffffff73] text-black dark:text-white text-lg md:border px-4">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center h-16">
             <div className="">
@@ -44,17 +44,33 @@ const Navbar = () => {
 
             <div className="flex items-center gap-2">
               <div className="hidden lg:flex gap-4">
-                <div className='relative p-[1px] flex rounded-xl bg-gradient-to-r from-[#CFBEFF] via-[#00F2EACC] to-[#ACF7AC]'>
-                  <div className="px-4 py-2 bg-[#C6EFEF] dark:bg-[#152030] rounded-xl">
-                    DApp
+                <div className="relative group inline-block">
+                  {/* Outer Gradient Border */}
+                  <div className='relative p-[1px] flex rounded-xl bg-gradient-to-r from-[#CFBEFF] via-[#00F2EACC] to-[#ACF7AC]'>
+                    {/* Inner Content */}
+                    <div className="px-4 py-2 bg-[#C6EFEF] dark:bg-[#152030] rounded-xl cursor-not-allowed">
+                      DApp
+                    </div>
+                  </div>
+
+                  {/* Tooltip */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-14 mb-2 hidden group-hover:block px-3 py-1 rounded-full bg-[#EAFBFB] dark:bg-[#232730] text-black/90 dark:text-white/90 text-sm shadow border border-[#33BCBC] dark:border-[#444] z-10 whitespace-nowrap">
+                    Coming Soon
                   </div>
                 </div>
-                <Link
-                  href=""
-                  className="px-6 py-2 text-white dark:text-black font-light rounded-lg cursor-pointer transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)]"
-                >
-                  Log in
-                </Link>
+
+                <div className='flex relative group'>
+                  <Link
+                    href=""
+                    className="cursor-not-allowed px-6 py-2 text-white dark:text-black font-light rounded-lg transition-all duration-300 shadow-[0_0_5px_rgba(127,255,212,0.8)] hover:shadow-[0_0_8px_rgba(127,255,212,1)] bg-[#48A3A4] dark:bg-[linear-gradient(131deg,_#98faff,_#9bf5fb,_#6fe7db)]"
+                  >
+                    Log in
+                  </Link>
+                  {/* Tooltip */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-14 mb-2 hidden group-hover:block px-3 py-1 rounded-full bg-[#EAFBFB] dark:bg-[#232730] text-black/90 dark:text-white/90 text-sm shadow border border-[#33BCBC] dark:border-[#444] z-10 whitespace-nowrap">
+                    Coming Soon
+                  </div>
+                </div>
               </div>
               <ThemeToggleButton />
               <div onClick={() => setIsMenu(!isMenu)} className="lg:hidden text-black dark:text-white/80 cursor-pointer">

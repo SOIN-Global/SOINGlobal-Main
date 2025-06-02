@@ -4,21 +4,21 @@ import { useRef } from 'react';
 
 const suggestions = [
     'Best Twitter influencers for a meme coin launch',
-    'Where should I promote a Solana token this week',
-    'Which call groups drive the most trading volume',
+    'Where should I promote a Solana token this week?',
+    'Which call groups drive the most trading volume?',
     'Top Telegram shillers for a $10K campaign',
-    'How to get 100K volume with a $5K budget',
+    'How to get 100K volume with a $5K budget?',
     'Trending KOLs in the DeFi space right now',
     'Best platforms to promote my new NFT-less token',
     'Find top crypto voices in the U.S. for token hype',
     'Suggest micro-influencers for an IDO promo',
     'Who’s leading engagement for GameFi this week?',
-    'Suggest some game streamers to promote our game.',
+    'Suggest some game streamers to promote our game',
     'Find top Instagram influencers for skincare in the U.S.',
     'Best-performing TikTok trends for beauty products in May',
     'Top YouTubers for finance app promotions',
     'Suggest Twitch streamers for mobile shooter games',
-    'How to reach 100K impressions with a $2K ad budget',
+    'How to reach 100K impressions with a $2K ad budget?',
     'Suggest micro-influencers for productivity apps on Instagram',
     'Who’s trending in sustainable lifestyle content this week?'
 ];
