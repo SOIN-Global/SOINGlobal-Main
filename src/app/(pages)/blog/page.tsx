@@ -1,37 +1,34 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import blogImg1 from "@/assets/services/quality-service-1.png"
-import blogImg2 from "@/assets/services/quality-service-2.png";
-import blogImg3 from "@/assets/services/quality-service-3.png";
+import blogImg1 from "@/assets/blog/revolution.webp"
+import blogImg2 from "@/assets/blog/hela.png";
+import blogImg3 from "@/assets/blog/development.png";
 
 const blogs = [
   {
     id: 1,
-    title: "SupraNova is Live on Public Testnet: The First Truly Bridgeless Cross-Chain Messaging",
-    date: "22 days ago",
+    title: "Revolutionizing Influencer Marketing with On-Chain Intelligence",
+    date: "May 26, 2025",
     image: blogImg1,
-    tags: ["Announcements", "DeFi"],
     excerpt:
-      "SupraNova is now live on public testnet, enabling the first truly bridgeless cross-chain messaging between Supra and Ethereum's Goerli testnet. Say goodbye to risky bridges and fragmented liquidity—here's what you need to know.",
+      "If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.",
   },
   {
     id: 2,
-    title: "Supra Automation is Live on Public Testnet, Starting the AutoFi Revenue Engine",
-    date: "1 month ago",
+    title: "SOIN Global & HeLa Forge Strategic Partnership to Power Personalized AI & Sustainable Yields in Web3 Marketing",
+    date: "May 31, 2025",
     image: blogImg2,
-    tags: ["Announcements", "DeFi", "Use Cases"],
     excerpt:
-      "Supra's system-level automation is about to go live on the public testnet, enabling blockchains to self-execute DeFi processes like arbitrage and liquidations. This marks the beginning of AutoFi—an automation-powered revenue model that could replace fees and emissions in the next era of crypto.",
+      "In today’s rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing, yet many protocols still struggle with inconsistent yields and fragmented data sources.",
   },
   {
     id: 3,
-    title: "Introducing the $SUPRA Token: Tokenomics and Utility",
-    date: "5 months ago",
+    title: "SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
+    date: "Jun 05, 2025",
     image: blogImg3,
-    tags: ["Announcements", "Articles", "Tutorials/Overviews", "Use Cases"],
     excerpt:
-      "Supra prioritizes its community and ecosystem, reflected in $SUPRA's thoughtfully designed tokenomics. With no team tokens unlocked at TGE and gradual releases planned, $SUPRA drives long-term growth and utility within Supra's MultiVM Layer 1 ecosystem.",
+      "Last week, we quietly rolled out a new integration that’s going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
   },
 ];
 
@@ -58,16 +55,6 @@ export default function BlogPage() {
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {blog.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-semibold px-2 py-1 rounded bg-[#C6EFEF] dark:bg-[#5B4A9A] text-[#5B4A9A] dark:text-[#C6EFEF]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <h2 className="text-lg font-bold text-black dark:text-white mb-2 line-clamp-2">
                   {blog.title}
                 </h2>

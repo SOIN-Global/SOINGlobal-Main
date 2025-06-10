@@ -68,10 +68,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <Head>
         {/* Google Ads Tag */}
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17106757545"
-        ></script>
+        ></script> */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY) || '';
 
 export async function POST(req: Request) {
   try {
@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "Soin Contact <onboarding@resend.dev>", // Change if using your own domain
-      to: "vipinpundirmzn001@gmail.com", // Destination email
+      to: "support@soinglobal.com", // Destination email
       subject: "New Contact Form Submission",
       html: `
         <div>
