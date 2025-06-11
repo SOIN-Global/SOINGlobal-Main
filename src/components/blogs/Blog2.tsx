@@ -1,5 +1,6 @@
 import Image from "next/image";
 import blogImg2 from "@/assets/blog/hela.png";
+import Link from "next/link";
 
 export default function Blog2() {
     return (
@@ -36,6 +37,68 @@ export default function Blog2() {
                 <li><strong>Built-in yield-generation engines</strong> that distribute rewards based on revenue, not mere token emissions—mirroring the “real yield” models advocated by DeFi sustainability experts
                     This architecture allows developers to deploy AI-driven dApps with minimal friction while users benefit from transparent, non-dilutive reward streams.</li>
             </ul>
+
+            <h2 className="font-bold text-2xl mb-3 mt-10">Why This Partnership Creates Unmatched Synergy</h2>
+
+            <p>Bringing SOIN Global’s AI prowess together with HeLa’s robust infrastructure unlocks several key advantages:
+                <br /><br />
+                <strong>
+                    Seamless Integration & Interoperability
+                </strong> <br />
+                SOIN’s smart contracts plug directly into HeLa’s EVM-compatible environment, enabling rapid deployment of influencer campaigns without bridging protocols.
+                <br /><br />
+                <strong>
+                    Stable, Predictable Fees
+                </strong> <br />
+                Marketers can budget accurately for campaign costs thanks to HeLa’s fiat-backed gas model, mitigating fee volatility that plagues other chains.
+                <br /><br />
+                <strong>
+                    Data-Enriched Yield Opportunities
+                </strong> <br />
+                Campaign participants earn rewards not only for engagement but also through HeLa’s built-in yield pools — creating a <strong>dual incentive model</strong> that rewards both performance and long-term holding.
+                <br /><br />
+                <strong>
+                    Trusted, On-Chain Identity
+                </strong> <br />
+                HeLa’s decentralized digital identity framework powers SOIN’s <strong>reputation-scoring engine</strong>, filtering out bots and bad actors to maintain a <strong>scam-free Web3 marketing ecosystem</strong>.
+            </p>
+
+            <h2 className="font-bold text-2xl mb-3 mt-10">Real-World Use Cases & Impact</h2>
+            <p>
+                <strong>Token Launch Campaigns</strong>
+                HeLa projects onboarding with SOIN gain access to bespoke AI budget plans that analyze historical call-group data to target high-impact KOLs — driving more efficient token distribution and healthier post-launch price curves.
+                <br /><br />
+                <strong>
+                    Continuous Growth Programs
+                </strong>
+                Brands running recurring campaigns can tap SOIN’s smart optimization, which reallocates budgets mid-flight based on real-time engagement metrics, all settled with stable fees on HeLa.
+                <br /><br />
+                <strong>
+                    Community-Led Bounties
+                </strong>
+                Leveraging HeLa’s yield-generation layers, campaign participants stake tokens to qualify for bounties awarded based on referral performance — aligning community growth with sustainable tokenomics.
+            </p>
+            <br />
+
+            <strong>What’s Next?</strong>
+            <br /><br />
+            <ol className="list-disc space-y-3">
+                <li><strong>Early Access Program</strong> HeLa projects can sign up now for SOIN’s Early Access, receiving priority onboarding and a dedicated success manager.</li>
+                <li><strong>Beta Campaign Launch</strong> Stay tuned for our joint beta campaign, kicking off in Q3 2025, to witness first-hand how personalized AI and sustainable yields drive real results.</li>
+                <li><strong>Developer Hackathon</strong> In partnership with HeLa, we’ll host a hackathon this summer — building new dApps, analytics modules, and yield-driven marketing tools.</li>
+                <li>By uniting <strong>SOIN Global’s AI-driven marketing intelligence</strong> with <strong>HeLa Chain’s modular, yield-focused Layer 1</strong>, we’re setting a new standard for <strong>efficient, transparent,</strong> and <strong>sustainable</strong> Web3 growth campaigns. Join us as we pioneer the next era of <strong>AI-powered Web3 adoption</strong> — where performance and profitability go hand in hand.</li>
+            </ol>
+
+            <p>At SOIN Global, we’re on a mission to revolutionize Web3 marketing. By partnering with HeLa — a blockchain architected for AI personalization and financial sustainability — we’re taking a giant leap forward in delivering transparent, high-impact campaigns that benefit brands, influencers, and communities alike.
+                <br /><br />
+                <strong>​​About SOIN GLOBAL</strong>
+                <br /><br />
+                <strong>SOIN Global</strong> is redefining how brands and creators collaborate by combining <strong>AI-driven insights with blockchain transparency</strong>. It’s not just another influencer platform — it’s a data-first, on-chain intelligence layer for marketing LLM.
+                <br /><br />
+                <strong>Get involved today:</strong>
+                <strong>Sign up</strong> for the SOIN Early Access Program
+            </p>
+            <Link className="text-blue-800" target="_blank" href="https://forms.gle/YA94P1anMUmCHPr99">https://forms.gle/YA94P1anMUmCHPr99</Link>
         </div>
     );
 }

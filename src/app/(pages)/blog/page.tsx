@@ -5,32 +5,37 @@ import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
 
-const blogs = [
+let blogs = [
   {
     id: 1,
     title: "Revolutionizing Influencer Marketing with On-Chain Intelligence",
     date: "May 26, 2025",
     image: blogImg1,
+    slug: "revolutionizing-influencer-marketing",
     excerpt:
-      "If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.",
+      "If you've run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you're left wondering.",
   },
   {
     id: 2,
     title: "SOIN Global & HeLa Forge Strategic Partnership to Power Personalized AI & Sustainable Yields in Web3 Marketing",
     date: "May 31, 2025",
     image: blogImg2,
+    slug: "soin-global-hela-partnership",
     excerpt:
-      "In today’s rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing, yet many protocols still struggle with inconsistent yields and fragmented data sources.",
+      "In today's rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing, yet many protocols still struggle with inconsistent yields and fragmented data sources.",
   },
   {
     id: 3,
-    title: "SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
+    title: "SOIN Global now taps directly into an AI Agent marketplace",
     date: "Jun 05, 2025",
     image: blogImg3,
+    slug: "soin-global-ai-marketplace",
     excerpt:
-      "Last week, we quietly rolled out a new integration that’s going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
+      "Last week, we quietly rolled out a new integration that's going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
   },
 ];
+
+blogs = blogs.reverse()
 
 export default function BlogPage() {
 
@@ -42,7 +47,7 @@ export default function BlogPage() {
           {blogs.map((blog) => (
             <Link
               key={blog.id}
-              href={`/blog/${blog.id}`}
+              href={`/blog/${blog.slug}`}
               className="w-full md:w-[31%] bg-[#EFF3EF] dark:bg-[#262B35] rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#C6EFEF] dark:border-[#262B35] flex flex-col overflow-hidden group"
             >
               <div className="relative w-full h-56">
@@ -68,4 +73,4 @@ export default function BlogPage() {
       </div>
     </div>
   );
-} 
+}

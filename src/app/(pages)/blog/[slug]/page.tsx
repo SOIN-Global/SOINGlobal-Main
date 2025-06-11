@@ -15,6 +15,7 @@ const blogs = [
     id: 1,
     title: "Revolutionizing Influencer Marketing with On-Chain Intelligence",
     date: "May 26, 2025",
+    slug: "revolutionizing-influencer-marketing",
     image: blogImg1,
     component: Blog1
   },
@@ -22,6 +23,7 @@ const blogs = [
     id: 2,
     title: "SOIN Global & HeLa Forge Strategic Partnership to Power Personalized AI & Sustainable Yields in Web3 Marketing",
     date: "May 31, 2025",
+    slug: "soin-global-hela-partnership",
     image: blogImg2,
     component: Blog2
   },
@@ -29,6 +31,7 @@ const blogs = [
     id: 3,
     title: "SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
     date: "Jun 05, 2025",
+    slug: "soin-global-ai-marketplace",
     image: blogImg3,
     component: Blog3,
   }
@@ -36,9 +39,9 @@ const blogs = [
 
 
 export default function BlogDetailPage() {
-  const { id } = useParams();
-  const blog = blogs.find((b) => b.id === Number(id));
-  const recentPosts = blogs.filter((b) => b.id !== Number(id));
+  const { slug } = useParams();
+  const blog = blogs.find((b) => b.slug === slug);
+  const recentPosts = blogs.filter((b) => b.slug !== slug);
 
   if (!blog) return <div className="text-center py-20 text-xl">Blog not found.</div>;
 
