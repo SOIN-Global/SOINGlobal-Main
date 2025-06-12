@@ -2,9 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logos/soin-logo.png";
 import Link from "next/link";
-import twitterImage from "@/assets/logos/twiter-logo.png";
-import telegramImage from "@/assets/logos/telegram-logo.png";
-import mediumImage from "@/assets/logos/medium-logo.png";
+import { FaLinkedinIn, FaMedium, FaTelegram, FaXTwitter } from "react-icons/fa6";
 
 
 const Footer = () => {
@@ -39,25 +37,34 @@ const Footer = () => {
                             <Link href="/about">About Us</Link>
                         </li>
                         <li className="mb-3 list-none">
-                            <Link href="/">Contact us</Link>
+                            <Link href="/">Contact Us</Link>
+                        </li>
+                        <li className="mb-3 list-none">
+                            <Link href="/">Privacy Policy</Link>
                         </li>
                     </div>
                     <div className="w-1/3">
                         <h3 className="text-xl text-[#48A3A4] dark:text-[#C6EFEF] font-bold mb-5">Social Media</h3>
                         <li className="mb-3 list-none">
+                            <Link target="_blank" href="https://www.linkedin.com/company/soinglobal" className="flex items-center gap-2">
+                             <FaLinkedinIn className="dark:text-white/80" size={23} />
+                                LinkedIn </Link>
+                        </li>
+                        <li className="mb-3 list-none">
                             <Link target="_blank" href="https://x.com/SoinGlobal" className="flex items-center gap-2">
-                                <Image src={twitterImage} alt="" quality={100} width={30} height={30} className="w-5 object-cover" />
+                                <FaXTwitter className="dark:text-white/80" size={23} />
                                 Twitter</Link>
                         </li>
                         <li className="mb-3 list-none">
                             <Link target="_blank" href="https:t.me/SOINGlobal" className="flex items-center gap-2">
-                                <Image src={telegramImage} alt="" quality={100} width={30} height={30} className="w-6 object-cover" />
+                                <FaTelegram className="dark:text-white/80" size={25} />
                                 Telegram</Link>
                         </li>
                         <li className="mb-3 list-none">
                             <Link target="_blank" href="https://medium.com/@soinglobalblog" className="flex items-center gap-2">
-                                <Image src={mediumImage} alt="" quality={100} width={30} height={30} className="w-6 object-cover" />
-                                Medium</Link>
+                                <FaMedium className="dark:text-white/80" size={23} />
+                                Medium
+                            </Link>
                         </li>
                     </div>
                 </div>

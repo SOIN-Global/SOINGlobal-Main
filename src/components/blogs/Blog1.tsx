@@ -4,7 +4,7 @@ import blogImg1 from "@/assets/blog/revolution.webp";
 export default function Blog1() {
     return (
         <div className="text-lg max-w-none text-black dark:text-white/90">
-            <h2 className="font-bold text-2xl mb-3 mt-10">Introducing SOIN</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Introducing SOIN</h2>
             <p>
                 If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.
                 <br />
@@ -17,7 +17,7 @@ export default function Blog1() {
             <div className="my-8">
                 <Image
                     src={blogImg1}
-                    alt="SupraNova"
+                    alt=""
                     className="rounded-lg"
                     width={800}
                     height={400}
@@ -30,7 +30,7 @@ export default function Blog1() {
                 That’s where <strong>SOIN</strong> comes in.
             </p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">The Shift: From Guesswork to Precision</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">The Shift: From Guesswork to Precision</h2>
 
             <p>Let’s be honest: today’s digital landscape moves fast. Meme coins go viral overnight. Call groups pump unknown tokens with unexpected force. In this chaos, brand marketers and growth leads need one thing more than ever — clarity.
                 <br />
@@ -41,7 +41,7 @@ export default function Blog1() {
                 Not based on assumptions. Based on data you can track, verify, and act on.
             </p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">Say You’re Launching a Crypto Product</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Say You’re Launching a Crypto Product</h2>
 
             <p>You’re targeting U.S.-based Gen Z users with a $5K influencer budget. Normally, you’d hunt down creators, check their profiles manually, guess their reach, and roll the dice.
                 <br />
@@ -55,7 +55,7 @@ export default function Blog1() {
                 It’s your growth assistant.
             </p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">Real-World Relevance: Why Now?</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Real-World Relevance: Why Now?</h2>
 
             <p>In 2024 and beyond, we’re seeing a few hard shifts:
                 <br /><br />
@@ -74,7 +74,7 @@ export default function Blog1() {
                 <br /><br />
                 And SOIN is leading that charge.</p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">About SOIN GLOBAL</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">About SOIN GLOBAL</h2>
 
             <p>SOIN Global is redefining how brands and creators collaborate by combining AI-driven insights with blockchain transparency. It’s not just another influencer platform — it’s a data-first, on-chain intelligence layer for marketing LLM.</p>
         </div>

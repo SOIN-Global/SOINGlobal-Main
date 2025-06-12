@@ -4,6 +4,7 @@ import Link from "next/link";
 import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
+import blogImg4 from "@/assets/blog/web3-support.png";
 
 let blogs = [
   {
@@ -32,6 +33,15 @@ let blogs = [
     slug: "soin-global-ai-marketplace",
     excerpt:
       "Last week, we quietly rolled out a new integration that's going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
+  },
+  {
+    id: 3,
+    title: "Revolutionizing Web3 Support & Growth: SOIN Global Partners with Ring AI",
+    date: "Jun 11, 2025",
+    image: blogImg4,
+    slug: "revolutionizing-web3-support",
+    excerpt:
+      "In today’s fast-paced Web3 ecosystem, projects need more than just flashy launches — they need 24/7, high-touch customer support and sales pipelines that scale with global communities.",
   },
 ];
 

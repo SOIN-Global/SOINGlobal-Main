@@ -8,7 +8,7 @@ export default function Blog2() {
             <div className="my-8">
                 <Image
                     src={blogImg2}
-                    alt="Supra Automation"
+                    alt=""
                     className="rounded-lg"
                     width={800}
                     height={400}
@@ -23,11 +23,11 @@ export default function Blog2() {
 
             <p>We’re thrilled to announce a landmark partnership between SOIN Global—the AI-driven Web3 growth intelligence platform—and HeLa, the intelligent Layer 1 blockchain for Personalized AI & Sustainable Yields. This collaboration brings together two cutting-edge innovators to deliver unmatched data-driven marketing solutions and financial flexibility for brands, influencers, and marketers operating across Web3 and Web2 channels.</p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">SOIN Global: First AI Agent Replaces Marketing Agencies</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">SOIN Global: First AI Agent Replaces Marketing Agencies</h2>
 
             <p>SOIN Global is revolutionizing Web3 influencer marketing with its AI-powered Growth Intelligence Engine. By continuously monitoring call groups, token volumes, and key opinion leader (KOL) activities across Twitter, Telegram, and Discord, SOIN’s AI Agent crafts customized budget plans designed to maximize token growth and engagement ROI. Its influencer-matching algorithm leverages real-time sentiment analysis and predictive modeling to identify the few KOLs who deliver outsized impact for any given campaign, rather than spreading budgets thin across dozens of mid-tier voices. With advanced analytics dashboards and performance tracking, brands can forecast outcomes, reallocate spend mid-campaign, and generate on-chain ROI reports—all without the overhead of traditional marketing agencies.</p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">HeLa Chain: Modular Layer 1 for Personalized AI & Sustainable Yields</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">HeLa Chain: Modular Layer 1 for Personalized AI & Sustainable Yields</h2>
 
             <p>HeLa Chain, developed by HeLa Labs, is a modular, EVM-compatible Layer 1 blockchain architected to support personalized AI workloads and sustainable yield mechanisms At its core, HeLa integrates:</p>
             <br />
@@ -38,7 +38,7 @@ export default function Blog2() {
                     This architecture allows developers to deploy AI-driven dApps with minimal friction while users benefit from transparent, non-dilutive reward streams.</li>
             </ul>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">Why This Partnership Creates Unmatched Synergy</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Why This Partnership Creates Unmatched Synergy</h2>
 
             <p>Bringing SOIN Global’s AI prowess together with HeLa’s robust infrastructure unlocks several key advantages:
                 <br /><br />
@@ -63,7 +63,7 @@ export default function Blog2() {
                 HeLa’s decentralized digital identity framework powers SOIN’s <strong>reputation-scoring engine</strong>, filtering out bots and bad actors to maintain a <strong>scam-free Web3 marketing ecosystem</strong>.
             </p>
 
-            <h2 className="font-bold text-2xl mb-3 mt-10">Real-World Use Cases & Impact</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Real-World Use Cases & Impact</h2>
             <p>
                 <strong>Token Launch Campaigns</strong>
                 HeLa projects onboarding with SOIN gain access to bespoke AI budget plans that analyze historical call-group data to target high-impact KOLs — driving more efficient token distribution and healthier post-launch price curves.

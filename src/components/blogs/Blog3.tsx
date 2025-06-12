@@ -3,7 +3,7 @@ import blogImg3 from "@/assets/blog/development.png";
 
 export default function Blog3() {
     return (
-        <div className="text-lg  max-w-none text-black dark:text-white/90">
+        <div className="md:text-lg  max-w-none text-black dark:text-white/90">
             <div className="my-8">
                 <Image
                     src={blogImg3}

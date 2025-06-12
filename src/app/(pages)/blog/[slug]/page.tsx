@@ -8,6 +8,8 @@ import Blog3 from "@/components/blogs/Blog3";
 import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
+import blogImg4 from "@/assets/blog/web3-support.png";
+import Blog4 from "@/components/blogs/Blog4";
 
 
 const blogs = [
@@ -34,6 +36,14 @@ const blogs = [
     slug: "soin-global-ai-marketplace",
     image: blogImg3,
     component: Blog3,
+  },
+  {
+    id: 4,
+    title: "Revolutionizing Web3 Support & Growth: SOIN Global Partners with Ring AI",
+    date: "Jun 11, 2025",
+    slug: "revolutionizing-web3-support",
+    image: blogImg4,
+    component: Blog4,
   }
 ];
 
@@ -71,7 +81,7 @@ export default function BlogDetailPage() {
               {recentPosts.map((post) => (
                 <Link
                   key={post.id}
-                  href={`/blog/${post.id}`}
+                  href={`/blog/${post.slug}`}
                   className="flex gap-3 items-center bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-2 hover:shadow-md transition"
                 >
                   <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">

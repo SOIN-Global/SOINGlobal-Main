@@ -5,10 +5,25 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '@/assets/logos/soin-logo.png';
 import ThemeToggleButton from './ThemeToggleButton';
-
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
+  const pathname = usePathname();
+
+  // Updated navigation handler
+  const handleNavigation = (sectionId: string) => {
+    if (pathname !== '/') {
+      // If not on home page, navigate to home page with hash
+      window.location.href = `/${sectionId}`;
+    } else {
+      // If on home page, scroll to section
+      const sectionElement = document.getElementById(sectionId.replace('#', ''));
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
 
   useEffect(() => {
@@ -35,10 +50,26 @@ const Navbar = () => {
             <div className="flex items-center gap-2 md:gap-6">
               <div className="hidden lg:flex space-x-14 nav-links transition-transform duration-300">
                 <Link href="/" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Home</Link>
-                <Link href="#services" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Services</Link>
-                <Link href="#Roadmap" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Roadmap</Link>
+                <button
+                  onClick={() => handleNavigation('#services')}
+                  className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'
+                >
+                  Services
+                </button>
+                <button
+                  onClick={() => handleNavigation('#Roadmap')}
+                  className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'
+                >
+                  Roadmap
+                </button>
                 <Link href="/blog" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Blogs</Link>
-                <Link href="#doc" className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'>Doc</Link>
+                <Link
+                  target="_blank"
+                  href="https://soin-global.gitbook.io/soin-social-intelligence"
+                  className='hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(90deg,_#4EA9A9_0%,_#4EA9A9_19%,_#A1920E_43%,_#A1920E_63%,_#5B4A9A_82%,_#5B4A9A_100%)] transition-all duration-300'
+                >
+                  Doc
+                </Link>
               </div>
             </div>
 
@@ -99,11 +130,11 @@ const Navbar = () => {
         </div>
         {/* Nav items  */}
         <div onClick={() => setIsMenu(false)} className="flex flex-col items-center nav-links transform transition-transform duration-300 space-y-5 mt-10">
-          <Link href="/" className=''>Home</Link>
-          <Link href="#services" className=''>Services</Link>
-          <Link href="#Roadmap" className=''>Roadmap</Link>
-          <Link href="/about" className=''>About</Link>
-          <Link href="#doc" className=''>Doc</Link>
+          <Link href="/">Home</Link>
+          <button onClick={() => handleNavigation('#services')}>Services</button>
+          <button onClick={() => handleNavigation('#Roadmap')}>Roadmap</button>
+          <Link href="/blog">Blog</Link>
+          <button onClick={() => handleNavigation('#doc')}>Doc</button>
           <div className='relative p-[1px] flex rounded-xl bg-gradient-to-r from-[#CFBEFF] via-[#00F2EACC] to-[#ACF7AC]'>
             <div className="px-4 py-2 bg-[#152030] rounded-xl text-white ">
               DApp

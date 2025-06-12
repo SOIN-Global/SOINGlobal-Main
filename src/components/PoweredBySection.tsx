@@ -1,13 +1,23 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import poweredByImage1 from "@/assets/logos/bnb-chain-logo.png";
 import poweredByImage2 from "@/assets/logos/solana-logo.png";
-import poweredByImage3 from "@/assets/logos/ethereum-logo.png";
+import ethereumLight from "@/assets/logos/ethereum-light.png";
+import ethereumDark from "@/assets/logos/ethereum-dark.png";
 import ContactModal from "@/components/ContactFormModel";
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 const PoweredBySection = () => {
     const [showContactModal, setShowContactModal] = useState(false);
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
 
     return (
         <>
@@ -17,7 +27,7 @@ const PoweredBySection = () => {
                 <div className="flex justify-evenly items-center gap-6">
                     <Image src={poweredByImage1} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover" />
                     <Image src={poweredByImage2} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover drop-shadow-xl" />
-                    <Image src={poweredByImage3} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover" />
+                    <Image src={resolvedTheme === 'dark' ? ethereumLight : ethereumDark} alt="" quality={100} width={300} height={300} className="w-1/5 max-w-[220px] h-full object-cover" />
                 </div>
 
                 {/* contact btn  */}
