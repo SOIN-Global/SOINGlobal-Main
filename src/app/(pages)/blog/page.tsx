@@ -35,7 +35,7 @@ let blogs = [
       "Last week, we quietly rolled out a new integration that's going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
   },
   {
-    id: 3,
+    id: 4,
     title: "Revolutionizing Web3 Support & Growth: SOIN Global Partners with Ring AI",
     date: "Jun 11, 2025",
     image: blogImg4,
@@ -53,12 +53,12 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl text-center font-bold mb-10">Blog & Announcements<span className="mt-2 block w-60 bg-[#5B4A9A] dark:bg-[#C6EFEF] h-1 rounded-xl m-auto"></span></h2>
-        <div className="flex flex-wrap gap-8 justify-center">
+        <div className="flex flex-wrap gap-8 w-full pl-3">
           {blogs.map((blog) => (
             <Link
               key={blog.id}
               href={`/blog/${blog.slug}`}
-              className="w-full md:w-[31%] bg-[#EFF3EF] dark:bg-[#262B35] rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#C6EFEF] dark:border-[#262B35] flex flex-col overflow-hidden group"
+              className="w-full md:w-[30%] lg:w-[31%] bg-[#EFF3EF] dark:bg-[#262B35] rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#C6EFEF] dark:border-[#262B35] flex flex-col overflow-hidden group"
             >
               <div className="relative w-full h-56">
                 <Image
