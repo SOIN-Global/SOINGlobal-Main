@@ -134,7 +134,8 @@ const Navbar = () => {
           <button onClick={() => handleNavigation('#services')}>Services</button>
           <button onClick={() => handleNavigation('#Roadmap')}>Roadmap</button>
           <Link href="/blog">Blog</Link>
-          <button onClick={() => handleNavigation('#doc')}>Doc</button>
+          <Link target="_blank"
+            href="https://soin-global.gitbook.io/soin-social-intelligence">Doc</Link>
           <div className='relative p-[1px] flex rounded-xl bg-gradient-to-r from-[#CFBEFF] via-[#00F2EACC] to-[#ACF7AC]'>
             <div className="px-4 py-2 bg-[#152030] rounded-xl text-white ">
               DApp

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Blog2() {
     return (
-        <div className="text-lg  max-w-none text-black dark:text-white/90">
+        <div className="md:text-lg  max-w-none text-black dark:text-white/90">
             <div className="my-8">
                 <Image
                     src={blogImg2}

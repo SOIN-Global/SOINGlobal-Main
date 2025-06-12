@@ -3,7 +3,7 @@ import blogImg1 from "@/assets/blog/revolution.webp";
 
 export default function Blog1() {
     return (
-        <div className="text-lg max-w-none text-black dark:text-white/90">
+        <div className="md:text-lg max-w-none text-black dark:text-white/90">
             <h2 className="font-bold text-xl md:text-2xl mb-3 mt-10">Introducing SOIN</h2>
             <p>
                 If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.
