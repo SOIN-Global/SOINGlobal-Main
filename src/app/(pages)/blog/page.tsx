@@ -5,6 +5,7 @@ import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
 import blogImg4 from "@/assets/blog/web3-support.png";
+import { GoArrowUpRight } from "react-icons/go";
 
 let blogs = [
   {
@@ -75,7 +76,7 @@ export default function BlogPage() {
                 </h2>
                 <span className="text-xs text-gray-500 mb-2">{blog.date}</span>
                 <p className="text-sm text-black/70 dark:text-white/80 line-clamp-3 mb-4">{blog.excerpt}</p>
-                <span className="mt-auto text-[#5B4A9A] dark:text-[#C6EFEF] font-semibold text-sm">Read More &rarr;</span>
+                <span className="flex gap-2 items-center mt-auto text-[#5B4A9A] dark:text-[#C6EFEF] font-semibold text-sm">Read More <GoArrowUpRight strokeWidth={1} /></span>
               </div>
             </Link>
           ))}

@@ -6,7 +6,8 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import arrow from '@/assets/logos/list-arrow.png';
+import Image from 'next/image';
 // Roadmap data
 const roadmapData = [
   {
@@ -113,13 +114,16 @@ const RoadmapSwiper = () => (
       {roadmapData.map((item, index) => (
         <SwiperSlide key={index}>
           {/* css is in global.css  */}
-          <div className="roadmap-card gradient-border rounded-3xl w-4/5 h-[500px] md:w-auto ">
+          <div className="roadmap-card gradient-border rounded-3xl w-4/5 h-[500px] lg:h-[450px] md:w-auto ">
             <div className="bg-[linear-gradient(to_top,#C6EFEF_20%,#ffffff_80%)] dark:bg-[rgb(18,28,48)] dark:bg-none w-full h-full rounded-3xl p-8">
               <h2 className="roadmap-quarter text-[#48A3A4] dark:text-[#C6EFEF]">{item.quarter}</h2>
               <h3 className="roadmap-title text-[#5B4A9A] dark:text-[#CFBEFF]">{item.title}</h3>
               <ul className="roadmap-list text-black/80 dark:text-white/90">
                 {item.items.map((listItem, idx) => (
-                  <li key={idx}>{listItem}</li>
+                  <div key={idx} className="flex items-start gap-2">
+                    <Image src={arrow} alt='' width={20} height={20} />
+                    <li> {listItem}</li>
+                  </div>
                 ))}
               </ul>
             </div>
