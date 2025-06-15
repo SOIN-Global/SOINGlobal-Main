@@ -9,13 +9,14 @@ import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
 import blogImg4 from "@/assets/blog/web3-support.png";
+
 const blogs = [
   {
     id: 1,
     title: "Revolutionizing Influencer Marketing with On-Chain Intelligence",
     date: "May 26, 2025",
     slug: "revolutionizing-influencer-marketing",
-    desc: "If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.",
+    desc: "If you've run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you're left wondering.",
     image: blogImg1,
     component: Blog1
   },
@@ -24,7 +25,7 @@ const blogs = [
     title: "SOIN Global & HeLa Forge Strategic Partnership to Power Personalized AI & Sustainable Yields in Web3 Marketing",
     date: "May 31, 2025",
     slug: "soin-global-hela-partnership",
-    desc: "In today’s rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing",
+    desc: "In today's rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing",
     image: blogImg2,
     component: Blog2
   },
@@ -33,7 +34,7 @@ const blogs = [
     title: "SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
     date: "Jun 05, 2025",
     slug: "soin-global-ai-marketplace",
-    desc: "Last week, we quietly rolled out a new integration that’s going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
+    desc: "Last week, we quietly rolled out a new integration that's going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
     image: blogImg3,
     component: Blog3,
   },
@@ -42,7 +43,7 @@ const blogs = [
     title: "Revolutionizing Web3 Support & Growth: SOIN Global Partners with Ring AI",
     date: "Jun 11, 2025",
     slug: "revolutionizing-web3-support",
-    desc: "In today’s fast-paced Web3 ecosystem, projects need more than just flashy launches — they need 24/7, high-touch customer support and sales pipelines that scale with global communities. Enter Ring AI, an autonomous, voice-driven platform designed to transform how teams engage users.",
+    desc: "In today's fast-paced Web3 ecosystem, projects need more than just flashy launches — they need 24/7, high-touch customer support and sales pipelines that scale with global communities. Enter Ring AI, an autonomous, voice-driven platform designed to transform how teams engage users.",
     image: blogImg4,
     component: Blog4,
   }
@@ -52,8 +53,9 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const blog = blogs.find((b) => b.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
   if (!blog) return {};
 
   return {
@@ -75,9 +77,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPage({ params }: { params: { slug: string } }) {
-  const blog = blogs.find((b) => b.slug === params.slug);
-  const recentPosts = blogs.filter((b) => b.slug !== params.slug);
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
+  const recentPosts = blogs.filter((b) => b.slug !== slug);
 
   if (!blog) return notFound();
   const BlogComponent = blog.component;
