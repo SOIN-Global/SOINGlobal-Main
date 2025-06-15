@@ -1,25 +1,21 @@
-"use client";
-import { useParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { notFound } from "next/navigation";
 import Blog1 from "@/components/blogs/Blog1";
 import Blog2 from "@/components/blogs/Blog2";
 import Blog3 from "@/components/blogs/Blog3";
+import Blog4 from "@/components/blogs/Blog4";
+import Image from "next/image";
+import Link from "next/link";
 import blogImg1 from "@/assets/blog/revolution.webp"
 import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
 import blogImg4 from "@/assets/blog/web3-support.png";
-import Blog4 from "@/components/blogs/Blog4";
-import Head from "next/head";
-import { useEffect, useState } from "react";
-
-
 const blogs = [
   {
     id: 1,
     title: "Revolutionizing Influencer Marketing with On-Chain Intelligence",
     date: "May 26, 2025",
     slug: "revolutionizing-influencer-marketing",
+    desc: "If you’ve run even a single influencer campaign recently, you know the feeling — excited brief, promising creators, decent engagement… but at the end of the month, you’re left wondering.",
     image: blogImg1,
     component: Blog1
   },
@@ -28,6 +24,7 @@ const blogs = [
     title: "SOIN Global & HeLa Forge Strategic Partnership to Power Personalized AI & Sustainable Yields in Web3 Marketing",
     date: "May 31, 2025",
     slug: "soin-global-hela-partnership",
+    desc: "In today’s rapidly evolving Web3 landscape, projects must blend cutting-edge technology with real-world utility to stand out. The convergence of artificial intelligence and blockchain is reshaping everything from decentralized finance to marketing",
     image: blogImg2,
     component: Blog2
   },
@@ -36,6 +33,7 @@ const blogs = [
     title: "SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
     date: "Jun 05, 2025",
     slug: "soin-global-ai-marketplace",
+    desc: "Last week, we quietly rolled out a new integration that’s going to change the way you harness AI for your Web3 campaigns. SOIN Global now taps directly into an AI Agent marketplace—so you still get to build on our Growth Intelligence Engine, but with an extra layer of on-demand AI talent at your fingertips.",
     image: blogImg3,
     component: Blog3,
   },
@@ -44,111 +42,88 @@ const blogs = [
     title: "Revolutionizing Web3 Support & Growth: SOIN Global Partners with Ring AI",
     date: "Jun 11, 2025",
     slug: "revolutionizing-web3-support",
+    desc: "In today’s fast-paced Web3 ecosystem, projects need more than just flashy launches — they need 24/7, high-touch customer support and sales pipelines that scale with global communities. Enter Ring AI, an autonomous, voice-driven platform designed to transform how teams engage users.",
     image: blogImg4,
     component: Blog4,
   }
 ];
 
-export default function BlogDetailPage() {
-  const { slug } = useParams();
-  const blog = blogs.find((b) => b.slug === slug);
-  const recentPosts = blogs.filter((b) => b.slug !== slug);
-  const [currentUrl, setCurrentUrl] = useState("");
+export async function generateStaticParams() {
+  return blogs.map((blog) => ({ slug: blog.slug }));
+}
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentUrl(window.location.href);
-    }
-  }, []);
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const blog = blogs.find((b) => b.slug === params.slug);
+  if (!blog) return {};
 
-  if (!blog) return <div className="text-center py-20 text-xl">Blog not found.</div>;
+  return {
+    title: blog.title,
+    description: blog.desc,
+    openGraph: {
+      title: blog.title,
+      description: blog.desc,
+      url: `https://www.soinglobal.com/${blog.slug}`,
+      images: [blog.image],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.desc,
+      images: [blog.image],
+    },
+  };
+}
 
+export default function BlogPage({ params }: { params: { slug: string } }) {
+  const blog = blogs.find((b) => b.slug === params.slug);
+  const recentPosts = blogs.filter((b) => b.slug !== params.slug);
+
+  if (!blog) return notFound();
   const BlogComponent = blog.component;
 
   return (
-    <>
-      <Head>
-        <title>{blog.title}</title>
-        <meta name="description" content={blog.title} />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={blog.title} />
-        <meta property="og:description" content={blog.title} />
-        <meta
-          property="og:image"
-          content={blog.image?.src ?? "/og-image.png"} // image.src for static imports
-        />
-        <meta property="og:url" content={currentUrl} />
-        <meta property="og:type" content="article" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blog.title} />
-        <meta name="twitter:description" content={blog.title} />
-        <meta
-          name="twitter:image"
-          content={blog.image?.src ?? "/default-og-image.png"}
-        />
-      </Head>
-
-
-      <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
-          {/* Main Blog Content */}
-          <div className="flex-1">
-            <div className="mb-6">
-              <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-[#C6EFEF] mb-2 font-jakarta">
-                {blog.title}
-              </h1>
-              <span className="text-sm text-gray-500 mb-2 block">{blog.date} • 2 min read</span>
-            </div>
-
-            {/* Render the specific blog component */}
-            <BlogComponent />
+    <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+        {/* Blog Content */}
+        <div className="flex-1">
+          <div className="mb-6">
+            <h1 className="text-4xl font-bold text-black dark:text-[#C6EFEF] mb-2">
+              {blog.title}
+            </h1>
+            <p className="text-sm text-gray-500 mb-2">{blog.date} • 2 min read</p>
           </div>
-
-          {/* Sidebar: Recent Posts & Search */}
-          <aside className="w-full lg:w-80 flex-shrink-0">
-            <div className="mb-8">
-              <h3 className="text-lg font-bold text-black dark:text-[#C6EFEF] mb-4">Recent Posts</h3>
-              <div className="flex flex-col gap-4">
-                {recentPosts.map((post) => (
-                  <Link
-                    key={post.id}
-                    href={`/blog/${post.slug}`}
-                    className="flex gap-3 items-center bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-2 hover:shadow-md transition"
-                  >
-                    <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover rounded"
-                        sizes="64px"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-sm font-semibold text-black dark:text-white line-clamp-2">
-                        {post.title}
-                      </h4>
-                      <span className="text-xs text-gray-500">{post.date}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div className="bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-4">
-              <h4 className="text-base font-semibold text-black dark:text-[#C6EFEF] mb-2">Search</h4>
-              <input
-                type="text"
-                placeholder="Search blog..."
-                className="w-full px-3 py-2 rounded border border-[#C6EFEF] dark:border-[#262B35] bg-white dark:bg-[#1a2233] text-black dark:text-white focus:outline-none"
-              />
-              <button className="mt-3 w-full py-2 rounded bg-[#5B4A9A] dark:bg-[#C6EFEF] text-white dark:text-[#5B4A9A] font-semibold transition">SEARCH</button>
-            </div>
-          </aside>
+          <BlogComponent />
         </div>
+
+        {/* Sidebar */}
+        <aside className="w-full lg:w-80 flex-shrink-0">
+          <h3 className="text-lg font-bold text-black dark:text-[#C6EFEF] mb-4">Recent Posts</h3>
+          <div className="flex flex-col gap-4">
+            {recentPosts.map((post) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.slug}`}
+                className="flex items-center gap-3 bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-2 hover:shadow-md"
+              >
+                <div className="relative w-16 h-16 rounded overflow-hidden flex-shrink-0">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover rounded"
+                    sizes="64px"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-black dark:text-white line-clamp-2">{post.title}</h4>
+                  <p className="text-xs text-gray-500">{post.date}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </aside>
       </div>
-    </>
+    </div>
   );
 }
