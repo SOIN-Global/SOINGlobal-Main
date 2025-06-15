@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: blog.title,
       description: blog.desc,
-      url: `https://www.soinglobal.com/${blog.slug}`,
+      url: `https://www.soinglobal.com/${blog.slug}.png`,
       images: [blog.image],
       type: "article",
     },
