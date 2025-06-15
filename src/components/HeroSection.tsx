@@ -7,7 +7,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div className="relative z-5 bannersec max-w-4xl m-auto h-[90vh] max-h-[600px] flex justify-center flex-col items-center text-center space-y-4 md:space-y-8">
+            <div className="animate-slide-in relative z-5 bannersec max-w-4xl m-auto h-[90vh] max-h-[600px] flex justify-center flex-col items-center text-center space-y-4 md:space-y-8">
 
                 <h1
                     className="text-4xl md:text-6xl font-bold text-transparent py-2"

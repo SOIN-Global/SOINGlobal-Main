@@ -29,7 +29,7 @@ const AiPowered = () => {
             <div className="text-center py-10 max-w-screen-xl m-auto px-4">
                 <h2 className="text-black font-jakarta dark:text-[#C6EFEF] text-4xl font-bold mb-5">AI-Powered Social Intelligence</h2>
                 <p className='text-[#5B4A9A] dark:text-[#CFBEFF] text-center text-sm'>Smarter Influencer Marketing | Maximized Engagement | Better ROI | Say goodbye to guesswork </p>
-                <div className="flex justify-center items-center gap-5 flex-wrap py-5">
+                <div className=" flex justify-center items-center gap-5 flex-wrap py-5">
                     <div className="w-full md:w-[42%]">
                         <Image src={resolvedTheme === 'dark' ? profileImage : profileLightImage}
                             alt="ai-powered-social-intelligence" quality={100} width={400} height={400} className="w-full h-full object-cover" />

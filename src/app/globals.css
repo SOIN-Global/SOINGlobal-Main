@@ -176,3 +176,19 @@ body {
   margin-bottom: 30px;
   position: relative;
 }
+
+/* ---------------------------------Animation keyframes---------------------------- */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Apply animations to elements */
+.animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
