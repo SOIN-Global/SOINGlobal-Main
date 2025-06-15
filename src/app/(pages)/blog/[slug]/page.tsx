@@ -10,6 +10,8 @@ import blogImg2 from "@/assets/blog/hela.png";
 import blogImg3 from "@/assets/blog/development.png";
 import blogImg4 from "@/assets/blog/web3-support.png";
 import Blog4 from "@/components/blogs/Blog4";
+import Head from "next/head";
+import { useEffect, useState } from "react";
 
 
 const blogs = [
@@ -47,73 +49,106 @@ const blogs = [
   }
 ];
 
-
 export default function BlogDetailPage() {
   const { slug } = useParams();
   const blog = blogs.find((b) => b.slug === slug);
   const recentPosts = blogs.filter((b) => b.slug !== slug);
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   if (!blog) return <div className="text-center py-20 text-xl">Blog not found.</div>;
 
   const BlogComponent = blog.component;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
-        {/* Main Blog Content */}
-        <div className="flex-1">
-          <div className="mb-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-[#C6EFEF] mb-2 font-jakarta">
-              {blog.title}
-            </h1>
-            <span className="text-sm text-gray-500 mb-2 block">{blog.date} • 2 min read</span>
-          </div>
+    <>
+      <Head>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.title} />
 
-          {/* Render the specific blog component */}
-          <BlogComponent />
-        </div>
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.title} />
+        <meta
+          property="og:image"
+          content={blog.image?.src ?? "/og-image.png"} // image.src for static imports
+        />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="article" />
 
-        {/* Sidebar: Recent Posts & Search */}
-        <aside className="w-full lg:w-80 flex-shrink-0">
-          <div className="mb-8">
-            <h3 className="text-lg font-bold text-black dark:text-[#C6EFEF] mb-4">Recent Posts</h3>
-            <div className="flex flex-col gap-4">
-              {recentPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="flex gap-3 items-center bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-2 hover:shadow-md transition"
-                >
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover rounded"
-                      sizes="64px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-sm font-semibold text-black dark:text-white line-clamp-2">
-                      {post.title}
-                    </h4>
-                    <span className="text-xs text-gray-500">{post.date}</span>
-                  </div>
-                </Link>
-              ))}
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.title} />
+        <meta
+          name="twitter:image"
+          content={blog.image?.src ?? "/default-og-image.png"}
+        />
+      </Head>
+
+
+      <div className="min-h-screen bg-white dark:bg-[#00091a] py-10 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+          {/* Main Blog Content */}
+          <div className="flex-1">
+            <div className="mb-6">
+              <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-[#C6EFEF] mb-2 font-jakarta">
+                {blog.title}
+              </h1>
+              <span className="text-sm text-gray-500 mb-2 block">{blog.date} • 2 min read</span>
             </div>
+
+            {/* Render the specific blog component */}
+            <BlogComponent />
           </div>
-          <div className="bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-4">
-            <h4 className="text-base font-semibold text-black dark:text-[#C6EFEF] mb-2">Search</h4>
-            <input
-              type="text"
-              placeholder="Search blog..."
-              className="w-full px-3 py-2 rounded border border-[#C6EFEF] dark:border-[#262B35] bg-white dark:bg-[#1a2233] text-black dark:text-white focus:outline-none"
-            />
-            <button className="mt-3 w-full py-2 rounded bg-[#5B4A9A] dark:bg-[#C6EFEF] text-white dark:text-[#5B4A9A] font-semibold transition">SEARCH</button>
-          </div>
-        </aside>
+
+          {/* Sidebar: Recent Posts & Search */}
+          <aside className="w-full lg:w-80 flex-shrink-0">
+            <div className="mb-8">
+              <h3 className="text-lg font-bold text-black dark:text-[#C6EFEF] mb-4">Recent Posts</h3>
+              <div className="flex flex-col gap-4">
+                {recentPosts.map((post) => (
+                  <Link
+                    key={post.id}
+                    href={`/blog/${post.slug}`}
+                    className="flex gap-3 items-center bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-2 hover:shadow-md transition"
+                  >
+                    <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover rounded"
+                        sizes="64px"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-sm font-semibold text-black dark:text-white line-clamp-2">
+                        {post.title}
+                      </h4>
+                      <span className="text-xs text-gray-500">{post.date}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#EFF3EF] dark:bg-[#262B35] rounded-lg p-4">
+              <h4 className="text-base font-semibold text-black dark:text-[#C6EFEF] mb-2">Search</h4>
+              <input
+                type="text"
+                placeholder="Search blog..."
+                className="w-full px-3 py-2 rounded border border-[#C6EFEF] dark:border-[#262B35] bg-white dark:bg-[#1a2233] text-black dark:text-white focus:outline-none"
+              />
+              <button className="mt-3 w-full py-2 rounded bg-[#5B4A9A] dark:bg-[#C6EFEF] text-white dark:text-[#5B4A9A] font-semibold transition">SEARCH</button>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
