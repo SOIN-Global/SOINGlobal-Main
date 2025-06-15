@@ -65,14 +65,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: blog.title,
       description: blog.desc,
       url: `https://www.soinglobal.com/${blog.slug}.png`,
-      images: [blog.image],
+      images: [blog.image.src],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title: blog.title,
       description: blog.desc,
-      images: [blog.image],
+      images: [blog.image.src],
     },
   };
 }
