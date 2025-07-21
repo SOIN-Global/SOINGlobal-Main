@@ -1,7 +1,8 @@
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logos/soin-logo.png";
-import Link from "next/link";
+
 import {
   FaLinkedinIn,
   FaMedium,
