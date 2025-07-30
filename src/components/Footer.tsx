@@ -101,11 +101,21 @@ const Footer = () => {
             <li className="mb-3 list-none">
               <Link
                 target="_blank"
-                href="https:t.me/SOINGlobal"
+                href="https://t.me/SOINGLOBALAnnoucement"
                 className="flex items-center gap-2"
               >
                 <FaTelegram className="dark:text-white/80" size={25} />
-                Telegram
+                Telegram Announcement
+              </Link>
+            </li>
+            <li className="mb-3 list-none">
+              <Link
+                target="_blank"
+                href="https://t.me/SOINGlobal"
+                className="flex items-center gap-2"
+              >
+                <FaTelegram className="dark:text-white/80" size={25} />
+                Telegram Chat
               </Link>
             </li>
             <li className="mb-3 list-none">
