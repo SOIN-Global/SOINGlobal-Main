@@ -5,7 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { BlogCard } from "@/components/blog/BlogCard"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Search } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, ArrowUpRight, Search } from "lucide-react"
 import Navbar from "@/components/HomePage/Navbar"
 import FooterSection from "@/components/HomePage/FooterSection"
 
@@ -14,8 +15,15 @@ export const metadata: Metadata = {
     description: "Read the latest articles about Web3, AI-driven influencer marketing, and blockchain technology.",
 }
 
-export default async function BlogsPage() {
+const categories = ["View All", "Product", "Development", "Management", "Leadership"]
+
+export default async function BlogsPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ category?: string }>
+}) {
     const client = createClient()
+    const { category } = await searchParams
 
     // Fetch all blog posts
     const blogPosts = await client.getAllByType("blog_post", {
@@ -25,17 +33,22 @@ export default async function BlogsPage() {
         ],
     })
 
-    // Get featured post (most recent)
-    const featuredPost = blogPosts[0]
-    const otherPosts = blogPosts.slice(1)
+    // Filter by category if provided
+    const filteredPosts = category && category !== "View All"
+        ? blogPosts.filter(post => post.data.category === category)
+        : blogPosts
+
+    // Get featured post (most recent from filtered)
+    const featuredPost = filteredPosts[0]
+    const otherPosts = filteredPosts.slice(1)
 
     return (
         <div className="min-h-screen bg-black">
 
-             <div className="flex justify-center">
-        <Navbar />
+            <div className="flex justify-center">
+                <Navbar />
 
-      </div>
+            </div>
             {/* Header Section */}
             <div className="relative overflow-hidden">
 
@@ -53,6 +66,24 @@ export default async function BlogsPage() {
                         {/* Search Bar */}
 
                     </div>
+                </div>
+            </div>
+
+            {/* Category Tabs */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="flex flex-wrap gap-3 items-center justify-start">
+                    {categories.map((cat) => (
+                        <Link
+                            key={cat}
+                            href={cat === "View All" ? "/blogs" : `/blogs?category=${cat}`}
+                            className={`px-6 py-2.5  text-sm font-medium transition-all duration-300 ${(category === cat || (!category && cat === "View All"))
+                                    ? "border-b text-primary border-primary"
+                                    : "text-muted-foreground hover:text-white border-none hover:border-white/50"
+                                }`}
+                        >
+                            {cat}
+                        </Link>
+                    ))}
                 </div>
             </div>
 
@@ -111,19 +142,19 @@ export default async function BlogsPage() {
                                             })}
                                         </span>
                                     )}
-                                    {featuredPost.data.author && (
+                                    {/* {featuredPost.data.author && (
                                         <>
                                             <span>•</span>
                                             <span>{featuredPost.data.author}</span>
                                         </>
-                                    )}
+                                    )} */}
                                 </div>
 
                                 <div className="pt-4">
-                                    <Button className="rounded-full group">
-                                        Read More
-                                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                    </Button>
+                                    <p className="text-primary flex items-center gap-1">
+                                        Read More <ArrowUpRight size={18} />
+                                    </p>
+
                                 </div>
                             </div>
                         </div>
@@ -151,7 +182,7 @@ export default async function BlogsPage() {
             </div>
 
             {/* Bottom Logo */}
-              <FooterSection />
+            <FooterSection />
         </div>
     )
 }

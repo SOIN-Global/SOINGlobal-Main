@@ -70,6 +70,41 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 /**
+ * Item in *Blog Post → Content Sections*
+ */
+export interface BlogPostDocumentDataContentSectionsItem {
+  /**
+   * Section Subtitle field in *Blog Post → Content Sections*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter subtitle for this section
+   * - **API ID Path**: blog_post.content_sections[].section_subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_subtitle: prismic.KeyTextField;
+
+  /**
+   * Section Description field in *Blog Post → Content Sections*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter description for this section...
+   * - **API ID Path**: blog_post.content_sections[].section_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  section_description: prismic.RichTextField;
+
+  /**
+   * Section Image field in *Blog Post → Content Sections*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.content_sections[].section_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  section_image: prismic.ImageField<never>;
+}
+
+/**
  * Item in *Blog Post → Tags*
  */
 export interface BlogPostDocumentDataTagsItem {
@@ -122,17 +157,6 @@ interface BlogPostDocumentData {
   excerpt: prismic.RichTextField;
 
   /**
-   * Author field in *Blog Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Author name
-   * - **API ID Path**: blog_post.author
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  author: prismic.KeyTextField;
-
-  /**
    * Publish Date field in *Blog Post*
    *
    * - **Field Type**: Date
@@ -153,25 +177,32 @@ interface BlogPostDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
   category: prismic.SelectField<
-    | "Web3"
-    | "Marketing"
-    | "AI"
-    | "Cryptocurrency"
-    | "Blockchain"
-    | "NFT"
-    | "DeFi"
+    "Product" | "Development" | "Management" | "Leadership"
   >;
 
   /**
-   * Content field in *Blog Post*
+   * Main Description field in *Blog Post*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Blog post content...
+   * - **Placeholder**: Main blog post description...
    * - **API ID Path**: blog_post.content
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   content: prismic.RichTextField;
+
+  /**
+   * Content Sections field in *Blog Post*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.content_sections[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  content_sections: prismic.GroupField<
+    Simplify<BlogPostDocumentDataContentSectionsItem>
+  >;
 
   /**
    * Tags field in *Blog Post*
@@ -257,6 +288,7 @@ declare module "@prismicio/client" {
     export type {
       BlogPostDocument,
       BlogPostDocumentData,
+      BlogPostDocumentDataContentSectionsItem,
       BlogPostDocumentDataTagsItem,
       AllDocumentTypes,
     };

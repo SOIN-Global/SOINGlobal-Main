@@ -37,13 +37,6 @@
           "single": "paragraph"
         }
       },
-      "author": {
-        "type": "Text",
-        "config": {
-          "label": "Author",
-          "placeholder": "Author name"
-        }
-      },
       "publish_date": {
         "type": "Date",
         "config": {
@@ -55,24 +48,48 @@
         "config": {
           "label": "Category",
           "placeholder": "Select a category",
-          "options": [
-            "Web3",
-            "Marketing",
-            "AI",
-            "Cryptocurrency",
-            "Blockchain",
-            "NFT",
-            "DeFi"
-          ]
+          "options": ["Product", "Development", "Management", "Leadership"]
         }
       },
       "content": {
         "type": "StructuredText",
         "config": {
-          "label": "Content",
-          "placeholder": "Blog post content...",
+          "label": "Main Description",
+          "placeholder": "Main blog post description...",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "content_sections": {
+        "type": "Group",
+        "config": {
+          "label": "Content Sections",
+          "fields": {
+            "section_subtitle": {
+              "type": "Text",
+              "config": {
+                "label": "Section Subtitle",
+                "placeholder": "Enter subtitle for this section"
+              }
+            },
+            "section_description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Section Description",
+                "placeholder": "Enter description for this section...",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading3,heading4,strong,em,hyperlink,list-item,o-list-item,rtl"
+              }
+            },
+            "section_image": {
+              "type": "Image",
+              "config": {
+                "label": "Section Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
         }
       },
       "tags": {

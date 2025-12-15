@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Calendar, User, ArrowRight } from "lucide-react"
+import { Calendar, User, ArrowRight, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface BlogCardProps {
@@ -50,27 +50,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
         </div>
 
         {/* Content */}
-        <div className="p-5 md:p-6 space-y-3">
-          {/* Meta Info */}
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            {data.publish_date && (
-              <div className="flex items-center gap-1">
-                <Calendar className="w-3 h-3" />
-                <span>{new Date(data.publish_date).toLocaleDateString('en-US', { 
-                  month: 'short', 
-                  day: 'numeric', 
-                  year: 'numeric' 
-                })}</span>
-              </div>
-            )}
-            {data.author && (
-              <div className="flex items-center gap-1">
-                <User className="w-3 h-3" />
-                <span>{data.author}</span>
-              </div>
-            )}
-          </div>
-
+        <div className="p-5 md:p-6 space-y-4 flex flex-col h-full">
           {/* Title */}
           <h3 className="text-lg md:text-xl font-semibold text-white line-clamp-2 group-hover:text-primary transition-colors">
             <PrismicRichText field={data.title} />
@@ -78,26 +58,18 @@ export function BlogCard({ post, index }: BlogCardProps) {
 
           {/* Excerpt */}
           {data.excerpt && (
-            <div className="text-sm text-muted-foreground line-clamp-2">
+            <div className="text-sm text-muted-foreground line-clamp-3 flex-grow">
               <PrismicRichText field={data.excerpt} />
             </div>
           )}
 
-          {/* Tags */}
-          {data.tags && data.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 pt-2">
-              {data.tags.slice(0, 3).map((item: any, i: number) => (
-                item.tag && (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-white/5 text-muted-foreground text-xs rounded"
-                  >
-                    #{item.tag}
-                  </span>
-                )
-              ))}
-            </div>
-          )}
+          {/* Read Post Button */}
+           <div className="pt-4">
+                                    <p className="text-primary flex items-center gap-1">
+                                        Read More <ArrowUpRight size={18} />
+                                    </p>
+
+                                </div>
         </div>
       </Link>
     </motion.div>
