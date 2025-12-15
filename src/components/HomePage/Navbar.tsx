@@ -10,21 +10,27 @@ import clsx from "clsx";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+  // useEffect(() => {
+  //   // Set initial scroll state before mount
+  //   setScrolled(window.scrollY > 20);
+  //   setMounted(true);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 20);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <nav
       style={{ boxShadow: "0px 15px 30px 3px #0000000A" }}
       className={clsx(
-        "w-[95%] sm:w-[90%] md:w-full fixed top-0  mt-2 sm:mt-3 md:mt-4 max-w-4xl transition-all duration-300 z-50",
+        "w-[95%] sm:w-[90%] md:w-full fixed top-0  mt-2 sm:mt-3 md:mt-4 max-w-4xl z-50",
+        mounted && "transition-all duration-300",
         scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white",
         "rounded-3xl lg:rounded-full"
       )}
@@ -33,16 +39,16 @@ export default function Navbar() {
 
         {/* LEFT LOGO */}
         <div className="flex items-center gap-2">
-          <Image src="/navbar/nav-logo.svg" alt="Logo" className="w-28 sm:w-32 md:w-40 h-full" width={1000} height={1000} />
+          <Image src="/navbar/nav-logo.svg" alt="Logo" className="w-28 sm:w-32 md:w-40 h-8 sm:h-9 md:h-10" width={1000} height={1000} />
         </div>
 
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-10 text-xs xl:text-sm font-medium text-muted">
           {["Home", "Service", "Roadmap", "Blog", "Whitepaper"].map((item) => {
             const getHref = (item: string) => {
-              if (item === "Home") return "#hero";
-              if (item === "Service") return "#service";
-              if (item === "Roadmap") return "#roadmap";
+              if (item === "Home") return "/#hero";
+              if (item === "Service") return "/#service";
+              if (item === "Roadmap") return "/#roadmap";
               if (item === "Blog") return "/blogs";
               return "#";
             };
@@ -93,9 +99,9 @@ export default function Navbar() {
         <div className="flex flex-col gap-4 sm:gap-6 text-black px-3 sm:px-6 pb-4 sm:pb-6 text-sm font-medium pt-2">
           {["Home", "Service", "Roadmap", "Blog", "Whitepaper"].map((item) => {
             const getHref = (item: string) => {
-              if (item === "Home") return "#hero";
-              if (item === "Service") return "#service";
-              if (item === "Roadmap") return "#roadmap";
+              if (item === "Home") return "/#hero";
+              if (item === "Service") return "/#service";
+              if (item === "Roadmap") return "/#roadmap";
               if (item === "Blog") return "/blogs";
               return "#";
             };

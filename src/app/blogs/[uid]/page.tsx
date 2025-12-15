@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                 </div>
                 {/* Header with Featured Image */}
 
-                <div className=" p-6 md:p-12 lg:p-16">
+                <div className=" p-6 md:p-12 lg:p-16 mt-10">
                     <div className="max-w-4xl mx-auto space-y-4">
                         {data.category && (
                             <span className="inline-block px-4 py-2 bg-primary text-white text-sm font-medium rounded-full">

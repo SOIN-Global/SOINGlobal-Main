@@ -86,6 +86,19 @@ export default function RoadMapSection() {
         },
     ]
 
+    // Map year labels to correct image filenames
+    const getYearImage = (year: string) => {
+        const imageMap: Record<string, string> = {
+            'Q1': 'Q1.png',
+            'Q2': 'Q2.png',
+            'Q3': 'Q3.png',
+            'Q4': 'Q4.png',
+            '2026': '2026.png',
+            '2027': '2027.png'
+        }
+        return imageMap[year] || 'Q1.png'
+    }
+
     return (
         <div id="roadmap" className='flex flex-col items-center justify-center gap-4 py-6 md:py-8 lg:py-10 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 bg-black'
             style={{
@@ -136,7 +149,7 @@ export default function RoadMapSection() {
                         <div className='lg:col-span-3 flex items-start justify-start lg:justify-end'>
                             <div className='relative w-20 h-12 '>
                                 <Image
-                                    src={`/roadmap/${phase.year.toLowerCase()}.png`}
+                                    src={`/roadmap/${getYearImage(phase.year)}`}
                                     alt={phase.year}
                                     fill
                                     className=''
