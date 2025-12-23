@@ -107,11 +107,11 @@ export default function FooterSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
-                className=' h-40
+                className=' h-38
                 bg-contain bg-no-repeat bg-center
                 '
                 style={{
-                    backgroundImage: `url('/footer/bottom-logo.png')`, // change path
+                    backgroundImage: `url('/footer/soin-global.png')`, // change path
                 }}>
 
             </motion.div>
