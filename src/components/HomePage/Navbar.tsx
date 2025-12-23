@@ -49,6 +49,7 @@ export default function Navbar() {
               if (item === "Home") return "/#hero";
               if (item === "Service") return "/#service";
               if (item === "Roadmap") return "/#roadmap";
+              if (item === "Whitepaper") return "https://soin-global.gitbook.io/soin-social-intelligence";
               if (item === "Blog") return "/blogs";
               return "#";
             };
@@ -74,8 +75,15 @@ export default function Navbar() {
         {/* RIGHT BUTTON (DESKTOP) */}
         <div className="hidden lg:block">
           <Link href="https://dapp.soinglobal.com/" target="_blank" rel="noopener noreferrer">
-            <Button className="rounded-full px-4 xl:px-6 py-4 xl:py-5 font-medium bg-black hover:bg-black/90 text-white gap-2 transition-transform duration-300 hover:scale-105 text-xs xl:text-sm">
-              ⚡ Try the Dapp
+            <Button className="rounded-full px-4 xl:px-6 py-4 xl:py-5 font-medium bg-black hover:bg-black/90 text-white gap-2 transition-transform duration-300 hover:scale-105 text-xs xl:text-sm relative overflow-hidden">
+              <span className="relative z-10">⚡ Try the Dapp</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite]" style={{ animation: 'shimmer 2s ease-in-out infinite', transform: 'translateX(-100%)' }}></span>
+              <style jsx>{`
+                @keyframes shimmer {
+                  0% { transform: translateX(-100%); }
+                  100% { transform: translateX(100%); }
+                }
+              `}</style>
             </Button>
           </Link>
         </div>
@@ -119,8 +127,9 @@ export default function Navbar() {
           })}
           <Link href="https://dapp.soinglobal.com/" target="_blank" rel="noopener noreferrer">
 
-          <Button className="rounded-full w-fit bg-black text-white py-2 px-4 mt-2 transition-all duration-300 hover:scale-105 text-xs sm:text-sm">
-            ⚡ Try the Dapp
+          <Button className="rounded-full w-fit bg-black text-white py-2 px-4 mt-2 transition-all duration-300 hover:scale-105 text-xs sm:text-sm relative overflow-hidden">
+            <span className="relative z-10">⚡ Try the Dapp</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite]" style={{ animation: 'shimmer 2s ease-in-out infinite', transform: 'translateX(-100%)' }}></span>
           </Button>
           </Link>
 

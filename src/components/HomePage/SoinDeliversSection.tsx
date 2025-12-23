@@ -1,8 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 interface DeliveryFeature {
     id: string
@@ -12,6 +15,51 @@ interface DeliveryFeature {
 }
 
 export default function SoinDeliversSection() {
+    const headingRef = useRef<HTMLHeadingElement>(null)
+    const cardsRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        // Animate heading
+        if (headingRef.current) {
+            gsap.fromTo(
+                headingRef.current,
+                { opacity: 0, filter: "blur(10px)" },
+                {
+                    opacity: 1,
+                    filter: "blur(0px)",
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: headingRef.current,
+                        start: "top 80%",
+                        once: true
+                    }
+                }
+            )
+        }
+
+        // Animate cards
+        if (cardsRef.current) {
+            const cards = cardsRef.current.querySelectorAll('.feature-card')
+            gsap.fromTo(
+                cards,
+                { opacity: 0, rotateY: 15, transformOrigin: "center" },
+                {
+                    opacity: 1,
+                    rotateY: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: cardsRef.current,
+                        start: "top 75%",
+                        once: true
+                    }
+                }
+            )
+        }
+    }, [])
+
     const features: DeliveryFeature[] = [
         {
             id: "feature-1",
@@ -61,26 +109,16 @@ export default function SoinDeliversSection() {
         >
             <div className="w-full max-w-7xl">
                 {/* Heading */}
-                <motion.h2 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-muted text-center mb-8 md:mb-12 lg:mb-16"
-                >
+                <h2 ref={headingRef} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-muted text-center mb-8 md:mb-12 lg:mb-16">
                     What SOIN Delivers
-                </motion.h2>
+                </h2>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+                <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                     {features.map((feature, index) => (
-                        <motion.div
+                        <div
                             key={feature.id}
-                            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            className="flex flex-col items-start gap-3 md:gap-4 p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300"
+                            className="feature-card flex flex-col items-start gap-3 md:gap-4 p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300"
                         >
                             {/* Icon */}
                             <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 relative  rounded-lg ">
@@ -102,7 +140,7 @@ export default function SoinDeliversSection() {
                             <p className="text-xs sm:text-sm md:text-base text-muted leading-relaxed">
                                 {feature.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
