@@ -110,12 +110,12 @@ export default function HeroSection() {
   return (
     <div
       ref={heroRef}
-      className="min-h-screen  bg-cover bg-center w-full relative flex flex-col items-center justify-center pb-10"
+      className="lg:min-h-screen  bg-cover bg-center w-full relative flex flex-col md:items-center md:justify-center pb-10 overflow-hidden "
      style={{
         backgroundImage: `url('/hero/hero-bg.png')`, // change path
       }}
     >
-      <div className='flex flex-col gap-3 md:gap-4 items-center justify-center mt-28 md:mt-36 lg:mt-44 relative px-4'>
+      <div className='flex flex-col gap-3 md:gap-4 items-center justify-center mt-40 md:mt-36 lg:mt-44 relative px-4 w-full max-w-7xl mx-auto'>
 
         <h1 
           ref={headingRef}
@@ -135,7 +135,7 @@ export default function HeroSection() {
           ref={walletIconRef}
           src="/hero/connect-wallet.svg" 
           alt="Partners" 
-          className="w-24 lg:w-20  xl:w-32  h-full absolute -bottom-20 lg:-bottom-26 right-0 xl-right-12 xl:-right-40 " 
+          className="hidden sm:block w-16 sm:w-20 md:w-24 lg:w-20 xl:w-32 h-auto absolute -bottom-16 sm:-bottom-5 lg:-bottom-26 -right-8 sm:right-0 md:right-4 lg:right-10 xl:-right-5 " 
           width={1000} 
           height={1000} 
         />
@@ -143,14 +143,14 @@ export default function HeroSection() {
           ref={campaignIconRef}
           src="/hero/create-campaign.svg" 
           alt="Partners" 
-          className="w-24 lg:w-20 xl:w-32  h-full absolute top-14 md:top-0 left-0 lg:-left-10 xl:-left-40 " 
+          className="hidden sm:block w-16 sm:w-20 md:w-24 lg:w-20 xl:w-32 h-auto absolute top-8 sm:top-10 md:top-20 lg:top-20 xl:top-0 -left-8 sm:left-0 md:left-4 lg:left-10 xl:-left-5" 
           width={1000} 
           height={1000} 
         />
       </div>
       <div 
         ref={dashboardRef}
-        className='h-60 sm:h-80 md:h-96 lg:h-120 bg-contain bg-no-repeat bg-center w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl px-4'
+        className='h-48 sm:h-60 md:h-80 lg:h-96 xl:h-120 bg-contain bg-no-repeat bg-center w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-4 mx-auto'
         style={{
           backgroundImage: `url('/hero/dashboard.png')`, // change path
         }}

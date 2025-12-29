@@ -158,7 +158,7 @@ export default function SolutionSection() {
             >
                 {/* Influencer Cards Section */}
                 <div className="w-full h-full flex items-center">
-                    <div className="grid gap-3 w-full grid-cols-2">
+                    <div className="grid gap-3 w-full md:grid-cols-2">
                         {influencers.map((influencer, index) => (
                             <InfluencerCard
                                 key={influencer.id}
