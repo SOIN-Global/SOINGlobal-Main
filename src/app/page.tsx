@@ -13,7 +13,7 @@ import Navbar from "@/components/HomePage/Navbar";
 
 export default function Home() {
   return (
-    <div className="relative w-full bg-black font-sans">
+    <div className="relative w-full bg-black font-sans overflow-x-hidden">
       {/* Fixed Navbar - always stays on top */}
       <div className="flex justify-center">
         <Navbar />
@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       {/* Sticky Hero Section - stays in place */}
-      <div id="hero" className="sticky top-0 lg:-top-40 z-0">
+      <div id="hero" className="sticky top-0 lg:-top-40 z-0 overflow-x-hidden">
         <HeroSection />
       </div>
 
@@ -63,11 +63,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative">
+        {/* <section className="relative">
           <div className="sticky top-0 bg-black">
             <RoadMapSection />
           </div>
-        </section>
+        </section> */}
 
         <div className="relative z-20 bg-black">
           <FooterSection />
