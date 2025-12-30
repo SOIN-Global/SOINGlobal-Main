@@ -40,7 +40,7 @@ export default function ForBrandsSection() {
 
     return (
         <section
-            className="w-full py-12 md:py-16 lg:py-24 flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 "
+            className="w-full  flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 "
         >
             <div className="w-full max-w-7xl">
                 {/* Heading */}
