@@ -63,11 +63,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="relative">
+        <section className="relative">
           <div className="sticky top-0 bg-black">
             <RoadMapSection />
           </div>
-        </section> */}
+        </section>
 
         <div className="relative z-20 bg-black">
           <FooterSection />
